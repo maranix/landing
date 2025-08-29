@@ -1,10 +1,11 @@
 <!-- Javascript -->
 <script lang="ts">
+    // your script goes here
 </script>
 
 <!-- HTML -->
-<main></main>
+<nav></nav>
 
-<!-- Styles -->
+<!-- Style -->
 <style>
 </style>

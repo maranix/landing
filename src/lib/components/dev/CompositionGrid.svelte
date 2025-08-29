@@ -28,7 +28,7 @@
         const cols = Math.floor(width / cellSize);
         const rows = Math.floor(height / cellSize);
 
-        ctx.strokeStyle = style ?? "#EDAFB8";
+        ctx.strokeStyle = style ?? "#EDAFB82F";
 
         for (let i = 0; i <= cols; i++) {
             ctx.beginPath();
