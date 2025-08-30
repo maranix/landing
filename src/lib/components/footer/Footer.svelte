@@ -34,6 +34,7 @@
     .container {
         position: fixed;
         bottom: 0;
+        padding-bottom: 2px;
 
         display: flex;
         width: 100%;

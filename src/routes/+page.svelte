@@ -3,7 +3,8 @@
 </script>
 
 <!-- HTML -->
-<main></main>
+<main>
+</main>
 
 <!-- Styles -->
 <style>
