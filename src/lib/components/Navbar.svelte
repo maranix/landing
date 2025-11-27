@@ -1,14 +1,9 @@
-<script lang="ts">
-	let isMenuOpen = false;
-</script>
-
 <header class="fixed top-4 left-1/2 z-50 -translate-x-1/2 sm:top-6 lg:top-8">
-	<nav
-		class="bg-surface-light/50 dark:bg-surface-dark/50 flex items-center gap-4 rounded-full p-2 shadow-sm backdrop-blur-md"
-	>
+	<nav class="bg-surface/50 flex items-center gap-4 rounded-full p-2 shadow-sm backdrop-blur-md">
 		<a
+			aria-label="Home"
 			href="/"
-			class="bg-background-light hover:bg-primary/20 dark:bg-background-dark dark:hover:bg-primary/20 group rounded-full p-2 transition-colors"
+			class="bg-background hover:bg-primary/20 group rounded-full p-2 transition-colors"
 		>
 			<div class="text-primary size-6 transition-transform group-hover:scale-110">
 				<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -21,24 +16,21 @@
 				</svg>
 			</div>
 		</a>
-		<div class="bg-stone-300 dark:bg-stone-700 h-6 w-px"></div>
-		<!-- <a
-			href="#projects"
-			class="font-display text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary text-sm font-bold uppercase tracking-widest transition-colors"
-			>Work</a
-		> 
-        Skipped as per instructions
-        -->
+		<div class="bg-stone-700 h-6 w-px"></div>
 		<a
+			aria-label="Contact"
 			href="#contact"
-			class="font-display text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary text-sm font-bold uppercase tracking-widest transition-colors"
+			class="font-display text-text-secondary hover:text-primary text-sm font-bold uppercase tracking-widest transition-colors"
 			>Contact</a
 		>
-		<div class="bg-stone-300 dark:bg-stone-700 h-6 w-px"></div>
+		<div class="bg-stone-700 h-6 w-px"></div>
 		<div class="flex items-center gap-2 pr-2">
 			<a
-				href="#"
-				class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors"
+				aria-label="GitHub"
+				href="https://github.com/maranix"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-text-secondary hover:text-primary transition-colors"
 			>
 				<svg
 					class="h-5 w-5"
@@ -52,8 +44,11 @@
 				>
 			</a>
 			<a
-				href="#"
-				class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors"
+				aria-label="LinkedIn"
+				href="https://linkedin.com/in/maranix"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-text-secondary hover:text-primary transition-colors"
 			>
 				<svg
 					class="h-5 w-5"
@@ -67,8 +62,11 @@
 				>
 			</a>
 			<a
-				href="#"
-				class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary transition-colors"
+				aria-label="X (Twitter)"
+				href="https://x.com/its_maranix"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-text-secondary hover:text-primary transition-colors"
 			>
 				<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
 					><path
