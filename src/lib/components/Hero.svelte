@@ -15,10 +15,9 @@
 			<span class="text-primary">VERMA</span>
 		</h1>
 		<p
-			class="text-text-secondary mx-auto mt-4 max-w-lg text-base leading-relaxed md:text-lg"
+			class="text-text-secondary mx-auto mt-20 max-w-lg text-base leading-relaxed md:text-lg"
 		>
-			A developer crafting serene and thoughtful software. Inspired by clarity and purpose, I build
-			digital experiences that are both functional and beautiful.
+		I build software with intention and care—creating experiences that are elegant, functional, and meaningful. Alongside my own ventures, I actively contribute to and maintain open-source softwares.
 		</p>
 	</div>
 </section>
