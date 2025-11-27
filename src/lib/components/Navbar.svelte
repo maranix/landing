@@ -24,7 +24,7 @@
 			>Contact</a
 		>
 		<div class="bg-stone-700 h-6 w-px"></div>
-		<div class="flex items-center gap-2 pr-2">
+		<div class="flex items-center gap-4 pr-2">
 			<a
 				aria-label="GitHub"
 				href="https://github.com/maranix"
