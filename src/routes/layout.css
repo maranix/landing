@@ -1,2 +1,31 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@theme {
+	--color-primary: #b4c3ae; /* Muted Sage Green */
+	--color-background-light: #f5f5f4; /* Stone 100 */
+	--color-background-dark: #1c1917; /* Stone 900 */
+	--color-surface-dark: #292524; /* Stone 800 */
+	--color-surface-light: #e7e5e4; /* Stone 200 */
+	--color-text-light: #1c1917; /* Stone 900 */
+	--color-text-dark: #e7e5e4; /* Stone 200 */
+	--color-text-secondary-light: #57534e; /* Stone 600 */
+	--color-text-secondary-dark: #a8a29e; /* Stone 400 */
+	--color-accent: #e6a29a; /* Muted Terracotta */
+
+	--font-display: 'Syne', sans-serif;
+	--font-body: 'Figtree', sans-serif;
+
+	--radius-lg: 0.75rem;
+	--radius-xl: 1rem;
+	--radius-2xl: 1.5rem;
+}
+
+.material-symbols-outlined {
+	font-variation-settings:
+		'FILL' 0,
+		'wght' 300,
+		'GRAD' 0,
+		'opsz' 24;
+}
+
