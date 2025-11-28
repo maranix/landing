@@ -19,7 +19,7 @@
 <a
 	{href}
 	class={cn(
-		'group bg-surface-light dark:bg-surface-dark relative overflow-hidden rounded-2xl p-8',
+		'group bg-surface-light dark:bg-surface-dark relative overflow-hidden rounded-2xl border border-transparent p-8 transition-all duration-300 hover:border-primary/50 hover:shadow-lg',
 		className
 	)}
 	style="grid-column: span {colSpan} / span {colSpan}; grid-row: span {rowSpan} / span {rowSpan};"
