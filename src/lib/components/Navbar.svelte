@@ -1,11 +1,11 @@
 <header class="fixed top-4 left-1/2 z-50 -translate-x-1/2 sm:top-6 lg:top-8">
-	<nav class="bg-surface/50 flex items-center gap-4 rounded-full p-2 shadow-sm backdrop-blur-md">
+	<nav class="flex items-center gap-4 rounded-full bg-surface/50 p-2 shadow-sm backdrop-blur-md">
 		<a
 			aria-label="Home"
 			href="/"
-			class="bg-background hover:bg-primary/20 group rounded-full p-2 transition-colors"
+			class="group rounded-full bg-background p-2 transition-colors hover:bg-primary/20"
 		>
-			<div class="text-primary size-6 transition-transform group-hover:scale-110">
+			<div class="size-6 text-primary transition-transform group-hover:scale-110">
 				<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 					<path
 						clip-rule="evenodd"
@@ -16,21 +16,21 @@
 				</svg>
 			</div>
 		</a>
-		<div class="bg-stone-700 h-6 w-px"></div>
+		<div class="h-6 w-px bg-stone-700"></div>
 		<a
 			aria-label="Contact"
 			href="#contact"
-			class="font-display text-text-secondary hover:text-primary text-sm font-bold uppercase tracking-widest transition-colors"
+			class="font-display text-sm font-bold tracking-widest text-text-secondary uppercase transition-colors hover:text-primary"
 			>Contact</a
 		>
-		<div class="bg-stone-700 h-6 w-px"></div>
+		<div class="h-6 w-px bg-stone-700"></div>
 		<div class="flex items-center gap-4 pr-2">
 			<a
 				aria-label="GitHub"
 				href="https://github.com/maranix"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-text-secondary hover:text-primary transition-colors"
+				class="text-text-secondary transition-colors hover:text-primary"
 			>
 				<svg
 					class="h-5 w-5"
@@ -48,7 +48,7 @@
 				href="https://linkedin.com/in/maranix"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-text-secondary hover:text-primary transition-colors"
+				class="text-text-secondary transition-colors hover:text-primary"
 			>
 				<svg
 					class="h-5 w-5"
@@ -66,9 +66,13 @@
 				href="https://x.com/its_maranix"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-text-secondary hover:text-primary transition-colors"
+				class="text-text-secondary transition-colors hover:text-primary"
 			>
-				<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
+				<svg
+					class="h-5 w-5"
+					fill="currentColor"
+					viewBox="0 0 512 512"
+					xmlns="http://www.w3.org/2000/svg"
 					><path
 						d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
 					></path></svg

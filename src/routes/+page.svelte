@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="bg-background font-body text-text selection:bg-accent/20 relative min-h-screen w-full overflow-x-hidden p-4 sm:p-6 lg:p-8"
+	class="relative min-h-screen w-full overflow-x-hidden bg-background p-4 font-body text-text selection:bg-accent/20 sm:p-6 lg:p-8"
 >
 	<div class="mx-auto max-w-7xl">
 		<Navbar />
