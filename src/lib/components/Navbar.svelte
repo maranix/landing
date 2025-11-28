@@ -5,12 +5,7 @@
 </script>
 
 <header class="fixed top-4 left-1/2 z-50 -translate-x-1/2 sm:top-6 lg:top-8">
-	<FrostedGlass
-		as="nav"
-		class="flex items-center gap-4 rounded-full p-2 shadow-sm"
-		opacity={50}
-		blurStrength="md"
-	>
+	<FrostedGlass as="nav" class="flex items-center gap-4 rounded-full p-2 shadow-sm">
 		<a
 			aria-label="Home"
 			href={base}

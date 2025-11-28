@@ -1,16 +1,26 @@
+<script>
+	import FrostedGlass from './FrostedGlass.svelte';
+</script>
+
 <section id="contact" class="w-full py-16 md:py-24">
-	<div class="rounded-2xl bg-primary/5 p-8 text-center">
+	<FrostedGlass class="rounded-2xl p-16 text-center">
 		<h2 class="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl">
 			Turn Bold Ideas Into Reality
 		</h2>
 		<p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-text-secondary md:text-lg">
 			Every ambitious project begins with a conversation. I collaborate with visionaries,
 			innovators, and creators to craft solutions that are not only functional but unforgettable. If
-			you’re ready to explore new possibilities, I’m here to make it happen.
+			you&apos;re ready to explore new possibilities.
 		</p>
 
 		<!-- CTA button -->
-		<div class="group relative mt-10 inline-flex items-center justify-center">
+		<div class="group relative mt-10 inline-flex flex-col items-center justify-center">
+			<p
+				class="mx-auto mb-4 max-w-xl text-base leading-relaxed
+text-text-secondary md:text-lg"
+			>
+				I&apos;m here to make it happen.
+			</p>
 			<a
 				href="mailto:ramanverma4183@gmail.com"
 				class="relative flex items-center justify-center font-display text-lg font-bold text-background"
@@ -34,5 +44,5 @@
 				</div>
 			</a>
 		</div>
-	</div>
+	</FrostedGlass>
 </section>

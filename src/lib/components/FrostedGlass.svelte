@@ -13,8 +13,8 @@
 	let {
 		children,
 		class: className = '',
-		opacity = 50,
 		blurStrength = 'md',
+		opacity = 50,
 		as = 'div',
 		...restProps
 	}: Props = $props();
@@ -29,8 +29,9 @@
 	};
 
 	const blurClass = blurClasses[blurStrength];
+	const opacityClass = `bg-surface/${opacity}`;
 </script>
 
-<svelte:element this={as} class="bg-surface/{opacity} {blurClass} {className}" {...restProps}>
+<svelte:element this={as} class="{blurClass} {opacityClass} {className}" {...restProps}>
 	{@render children()}
 </svelte:element>
