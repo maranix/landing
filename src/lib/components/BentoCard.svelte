@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { cn } from '$lib/utils';
 
 	let {
@@ -15,9 +16,8 @@
 	} = $props();
 </script>
 
-<!-- eslint-disable svelte/no-navigation-without-resolve -->
 <a
-	{href}
+	href={resolve(href)}
 	class={cn(
 		'group bg-surface-light dark:bg-surface-dark relative overflow-hidden rounded-2xl border border-transparent p-8 transition-all duration-300 hover:border-primary/50 hover:shadow-lg',
 		className
@@ -37,16 +37,16 @@
 		{/if}
 
 		<div class={isComingSoon ? '' : 'mt-auto'}>
-			{#if subtitle}
-				<p class="font-display text-xs font-medium tracking-widest text-accent uppercase">
-					{subtitle}
-				</p>
-			{/if}
 			<h3
-				class="text-text-light dark:text-text-dark mt-2 font-display text-4xl font-bold uppercase lg:text-5xl"
+				class="text-text-light dark:text-text-dark font-display text-4xl font-bold uppercase lg:text-5xl"
 			>
 				{title}
 			</h3>
+			{#if subtitle}
+				<p class="my-2 font-display text-xs font-medium tracking-widest text-accent uppercase">
+					{subtitle}
+				</p>
+			{/if}
 			{#if description}
 				<p class="text-text-secondary-light dark:text-text-secondary-dark mt-4 max-w-md">
 					{description}

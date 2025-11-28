@@ -13,20 +13,18 @@
 	<div class="mx-auto max-w-7xl">
 		<Navbar />
 		<main class="flex min-h-[calc(100vh-4rem)] flex-col">
-			<Hero />
-			<section class="w-full py-16 md:py-24" id="projects">
+			<div class="py-24">
+				<Hero />
+			</div>
+			<section class="w-full" id="works">
 				<div class="mb-12 text-center">
 					<h2
 						class="font-display text-5xl font-bold tracking-tight text-primary uppercase sm:text-6xl"
 					>
-						Selected Works
+						Works
 					</h2>
-					<p class="text-text-secondary-light dark:text-text-secondary-dark mx-auto mt-4 max-w-2xl">
-						A collection of projects showcasing my passion for creating thoughtful and effective
-						digital solutions.
-					</p>
 				</div>
-				<BentoGrid style="height: 900px;">
+				<BentoGrid>
 					<BentoCard
 						href="#"
 						subtitle="React, Node.js, PostgreSQL"
@@ -36,21 +34,6 @@
 						rowSpan={2}
 						class="col-span-12 md:col-span-7"
 					/>
-					<BentoCard
-						href="#"
-						subtitle="Vue, Firebase, TailwindCSS"
-						title="Project Beta"
-						class="col-span-12 flex flex-col justify-between md:col-span-5"
-						colSpan={5}
-						rowSpan={2}
-					>
-						<div
-							class="relative z-10 flex items-center justify-end gap-2 text-primary transition-transform duration-300 group-hover:-translate-x-1"
-						>
-							<p class="font-display text-sm font-bold uppercase">View Project</p>
-							<span class="material-symbols-outlined">arrow_back</span>
-						</div>
-					</BentoCard>
 					<BentoCard
 						href="#"
 						subtitle="Python, Django, Docker"
@@ -72,8 +55,10 @@
 					/>
 				</BentoGrid>
 			</section>
-			<LetsConnect />
 		</main>
+		<div class="py-24">
+			<LetsConnect />
+		</div>
 		<Footer />
 	</div>
 </div>
