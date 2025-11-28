@@ -1,8 +1,13 @@
+<script lang="ts">
+	import { resolve } from '$app/paths';
+	const base = resolve('/');
+</script>
+
 <header class="fixed top-4 left-1/2 z-50 -translate-x-1/2 sm:top-6 lg:top-8">
 	<nav class="flex items-center gap-4 rounded-full bg-surface/50 p-2 shadow-sm backdrop-blur-md">
 		<a
 			aria-label="Home"
-			href="/"
+			href={base}
 			class="group rounded-full bg-background p-2 transition-colors hover:bg-primary/20"
 		>
 			<div class="size-6 text-primary transition-transform group-hover:scale-110">
