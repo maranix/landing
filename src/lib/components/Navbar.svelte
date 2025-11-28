@@ -1,10 +1,16 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import FrostedGlass from './FrostedGlass.svelte';
 	const base = resolve('/');
 </script>
 
 <header class="fixed top-4 left-1/2 z-50 -translate-x-1/2 sm:top-6 lg:top-8">
-	<nav class="flex items-center gap-4 rounded-full bg-surface/50 p-2 shadow-sm backdrop-blur-md">
+	<FrostedGlass
+		as="nav"
+		class="flex items-center gap-4 rounded-full p-2 shadow-sm"
+		opacity={50}
+		blurStrength="md"
+	>
 		<a
 			aria-label="Home"
 			href={base}
@@ -84,5 +90,5 @@
 				>
 			</a>
 		</div>
-	</nav>
+	</FrostedGlass>
 </header>
