@@ -4,63 +4,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <meta name="description" content="Minimalist Design Portfolio">
+    <title>Maranix</title>
+    <meta name="description" content="">
 
-    <!-- Fonts: Syne and Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Syne:wght@400;700;800&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            min-height: calc(100vh - 6rem);
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        header {
+            max-width: clamp(15rem, 60vw, 31rem);
+
+            display: flex;
+
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header > div > hr {
+            height: 2px;
+
+            background-color: var(--fg);
+            border: none;
+
+            transform: translateY(0.5rem);
+        }
+
+        header > div > h1 {
+            text-transform: uppercase;
+            font-size: 4rem;
+            word-spacing: 0.5rem;
+        }
+    
+        header > div > p {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+
+        .section__social--primary {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        .section__social--primary > a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: color 200ms ease-in-out;
+            font-size: 1.3rem;
+        }
+
+        .section__social--primary > a:hover {
+            color: var(--fg);
+        }
+
+        /* main */
+        main {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .container__list--primary {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: end;
+            align-items: end;
+
+            gap: 1rem;
+        }
+
+        .container__list--primary > a {
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        .list__item--primary {
+            width: clamp(10rem, 35vw, 22rem);
+
+            font-size: 1.5rem;
+
+            border: 2px solid var(--accent);
+            border-left: none;
+            border-right: none;
+            padding: 0.5rem 0;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            transition: border-color 300ms ease-in-out, padding 200ms ease-in-out, color 500ms ease-in-out;
+            transition-delay: 100ms;
+        }
+
+        .list__item--primary:hover {
+            border-color: var(--fg);
+            color: var(--fg);
+            padding: 1rem 0;
+        }
+
+        .list__item__year--primary {
+            color: var(--accent);
+            opacity: 0.5;
+        }
+
+        .list__item__title--primary {
+            color: var(--fg);
+            opacity: 0.8;
+        }
+
+        footer {
+            color: var(--accent);
+
+            font-size: 1rem;
+            text-align: center;
+
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1 class="hero-title">Lorem<br>Ipsum</h1>
-        <p class="subtitle">Dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+        <div>
+            <hr />
+            <h1>raman verma</h1>
+            <p>I build software with intention and care—creating experiences that are elegant, functional,
+            and meaningful. Alongside my own ventures, I actively contribute to and maintain a few
+            open-source softwares.</p>
+        </div>
+
+        <section class="section__social--primary">
+            <a href="">GitHub</a>
+            <a href="">LinkedIn</a>
+            <a href="">X (Twitter)</a>
+            <a href="">Email</a>
+        </section>
     </header>
 
     <main>
-        <section id="work">
-            <h2>Selected Works</h2>
-            <div class="project-list">
-                <a href="#" class="project-item">
-                    <h3>Consectetur Elit</h3>
-                    <span class="project-year">/024</span>
-                </a>
-                <a href="#" class="project-item">
-                    <h3>Sed do Eiusmod</h3>
-                    <span class="project-year">/023</span>
-                </a>
-                <a href="#" class="project-item">
-                    <h3>Tempor Incididunt</h3>
-                    <span class="project-year">/023</span>
-                </a>
-                <a href="#" class="project-item">
-                    <h3>Magna Aliqua</h3>
-                    <span class="project-year">/022</span>
-                </a>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Get in touch</h2>
-            <div>
-                <a href="mailto:lorem@ipsum.com" class="contact-link">Lorem Ipsum</a>
-            </div>
-        </section>
+        <div class="container__list--primary">
+            <a href="" class="list__item--primary">
+                <span class="list__item__year--primary">2025</span>
+                <span class="list__item__title--primary">Bloc Meta</span>
+            </a>
+            <a href="" class="list__item--primary">
+                <span class="list__item__year--primary">2025</span>
+                <span class="list__item__title--primary">Bloc Meta</span>
+            </a>
+            <a href="" class="list__item--primary">
+                <span class="list__item__year--primary">2025</span>
+                <span class="list__item__title--primary">Bloc Meta</span>
+            </a>
+            <a href="" class="list__item--primary">
+                <span class="list__item__year--primary">2025</span>
+                <span class="list__item__title--primary">Bloc Meta</span>
+            </a>
+            <a href="" class="list__item--primary">
+                <span class="list__item__year--primary">2025</span>
+                <span class="list__item__title--primary">Bloc Meta</span>
+            </a>
+            <a href="" class="list__item--primary">
+                <span class="list__item__year--primary">2025</span>
+                <span class="list__item__title--primary">Bloc Meta</span>
+            </a>
+        </div>
     </main>
 
     <footer>
-        <div class="footer-left">
-            <span>© 2024 Lorem Ipsum</span>
-        </div>
-        <div class="footer-right">
-            <span>Syne & Space Grotesk</span>
-        </div>
+        &copy; 2025 Raman Verma
     </footer>
 </body>
 
