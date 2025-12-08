@@ -1,18 +1,18 @@
 :root {
-  /* --bg: #064E3B (Dark Green) */
-  --bg-l: 37.80%;
-  --bg-c: 0.073;
-  --bg-h: 168.94;
+  /* #0B0F10 */
+  --bg-l: 0.1645;
+  --bg-c: 0.0067;
+  --bg-h: 214.52;
 
-  /* --fg: #F0FDFA (Off-White) */
-  --fg-l: 98.36%;
-  --fg-c: 0.014;
-  --fg-h: 180.72;
+  /* #E6F4EA */
+  --fg-l: 0.954;
+  --fg-c: 0.0199;
+  --fg-h: 154.9;
 
-  /* --accent: #06B6D4 (Cyan/Teal) */
-  --accent-l: 71.48%;
-  --accent-c: 0.126;
-  --accent-h: 215.22;
+  /* #84CC16 */
+  --accent-l: 76.81%;
+  --accent-c: 0.2044;
+  --accent-h: 130.85;
 
   /* Background Color */
   --bg: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
