@@ -9,19 +9,20 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Lora:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <style>
         body {
-            min-height: calc(100vh - 6rem);
+            height: 100%;
 
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr auto;
         }
 
         header {
-            max-width: clamp(15rem, 60vw, 31rem);
+            max-width: clamp(15rem, 45vw, 30rem);
 
             display: flex;
 
@@ -29,26 +30,27 @@
             justify-content: space-between;
         }
 
-        header > div > hr {
-            height: 2px;
+        header > div {
+            padding: 1rem 0.5rem 1rem 1rem;
 
-            background-color: var(--fg);
-            border: none;
-
-            transform: translateY(0.5rem);
+            border-radius: 1rem;
+            border-top: 1px solid transparent; 
+            border-left: 1px solid transparent;
+            border-right: var(--border-decoration);
+            border-bottom: var(--border-decoration);
         }
 
         header > div > h1 {
-            text-transform: uppercase;
-            font-size: 4rem;
-            word-spacing: 0.5rem;
+            font-size: 3.5rem;
+            letter-spacing: 0.1rem;
         }
     
         header > div > p {
-            color: var(--accent);
-            font-size: 1.5rem;
+            color: var(--fg);
+            margin-top: 0.3rem;
+            opacity: 0.6;
+            line-height: 1.4rem;
         }
-
 
         .section__social--primary {
             display: flex;
@@ -58,80 +60,38 @@
 
         .section__social--primary > a {
             text-decoration: none;
-            color: var(--accent);
+            color: var(--fg);
             transition: color 200ms ease-in-out;
-            font-size: 1.3rem;
         }
 
         .section__social--primary > a:hover {
-            color: var(--fg);
+            color: var(--accent);
         }
 
         /* main */
         main {
             display: flex;
             flex-direction: column-reverse;
-        }
-
-        .container__list--primary {
-            display: flex;
-            flex-direction: column;
-
-            justify-content: end;
             align-items: end;
-
-            gap: 1rem;
         }
 
-        .container__list--primary > a {
-            text-decoration: none;
-            color: var(--accent);
-        }
+        footer {
+            padding: 0.5rem 1rem;
 
-        .list__item--primary {
-            width: clamp(10rem, 35vw, 22rem);
+            grid-row: 2;
+            grid-column: 1 / -1; 
 
-            font-size: 1.5rem;
-
-            border: 2px solid var(--accent);
-            border-left: none;
-            border-right: none;
-            padding: 0.5rem 0;
+            border-radius: 1rem;
+            border-top: var(--border-decoration);
+            border-bottom: var(--border-decoration);
 
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-
-            transition: border-color 300ms ease-in-out, padding 200ms ease-in-out, color 500ms ease-in-out;
-            transition-delay: 100ms;
         }
 
-        .list__item--primary:hover {
-            border-color: var(--fg);
-            color: var(--fg);
-            padding: 1rem 0;
-        }
-
-        .list__item__year--primary {
-            color: var(--accent);
+        .container__copyright--primary {
             opacity: 0.5;
-        }
-
-        .list__item__title--primary {
-            color: var(--fg);
-            opacity: 0.8;
-        }
-
-        footer {
-            color: var(--accent);
-
-            font-size: 1rem;
-            text-align: center;
-
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
         }
     </style>
 </head>
@@ -139,11 +99,18 @@
 <body>
     <header>
         <div>
-            <hr />
-            <h1>raman verma</h1>
-            <p>I build software with intention and care—creating experiences that are elegant, functional,
-            and meaningful. Alongside my own ventures, I actively contribute to and maintain a few
+            <h1>RAMAN VERMA</h1>
+            <p>I build software with intention and care—creating experiences that are elegant and meaningful. Alongside my own ventures, I actively contribute to and maintain a few
             open-source softwares.</p>
+        </div>
+    </header>
+
+    <main>
+    </main>
+
+    <footer>
+        <div class="container__copyright--primary">
+            &copy; 2025 Raman Verma
         </div>
 
         <section class="section__social--primary">
@@ -152,39 +119,6 @@
             <a href="">X (Twitter)</a>
             <a href="">Email</a>
         </section>
-    </header>
-
-    <main>
-        <div class="container__list--primary">
-            <a href="" class="list__item--primary">
-                <span class="list__item__year--primary">2025</span>
-                <span class="list__item__title--primary">Bloc Meta</span>
-            </a>
-            <a href="" class="list__item--primary">
-                <span class="list__item__year--primary">2025</span>
-                <span class="list__item__title--primary">Bloc Meta</span>
-            </a>
-            <a href="" class="list__item--primary">
-                <span class="list__item__year--primary">2025</span>
-                <span class="list__item__title--primary">Bloc Meta</span>
-            </a>
-            <a href="" class="list__item--primary">
-                <span class="list__item__year--primary">2025</span>
-                <span class="list__item__title--primary">Bloc Meta</span>
-            </a>
-            <a href="" class="list__item--primary">
-                <span class="list__item__year--primary">2025</span>
-                <span class="list__item__title--primary">Bloc Meta</span>
-            </a>
-            <a href="" class="list__item--primary">
-                <span class="list__item__year--primary">2025</span>
-                <span class="list__item__title--primary">Bloc Meta</span>
-            </a>
-        </div>
-    </main>
-
-    <footer>
-        &copy; 2025 Raman Verma
     </footer>
 </body>
 

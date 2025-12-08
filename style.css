@@ -1,15 +1,44 @@
 :root {
-  --bg: #000000;
-  --fg: #ffffff;
-  --accent: #666666;
-  --font-display: 'Playfair Display', sans-serif;
-  --font-body: 'Instrument Serif', sans-serif;
+  /* --bg: #064E3B (Dark Green) */
+  --bg-l: 37.80%;
+  --bg-c: 0.073;
+  --bg-h: 168.94;
+
+  /* --fg: #F0FDFA (Off-White) */
+  --fg-l: 98.36%;
+  --fg-c: 0.014;
+  --fg-h: 180.72;
+
+  /* --accent: #06B6D4 (Cyan/Teal) */
+  --accent-l: 71.48%;
+  --accent-c: 0.126;
+  --accent-h: 215.22;
+
+  /* Background Color */
+  --bg: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
+
+  /* Foreground/Text Color */
+  --fg: oklch(var(--fg-l) var(--fg-c) var(--fg-h));
+
+  /* Accent Color */
+  --accent: oklch(var(--accent-l) var(--accent-c) var(--accent-h));
+
+  /* Fonts */
+  --font-display: 'Lora', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Border Decorations */
+  --border-decoration: 2px solid oklch(var(--fg-l) var(--fg-c) var(--fg-h) / .3);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  height: calc(100vh - 4rem);
 }
 
 body {
@@ -20,7 +49,6 @@ body {
   margin: 3rem 6rem;
 
   font-family: var(--font-body);
-  line-height: 1.6;
 
   -webkit-font-smoothing: antialiased;
 }
