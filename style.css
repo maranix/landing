@@ -24,11 +24,12 @@
   --accent: oklch(var(--accent-l) var(--accent-c) var(--accent-h));
 
   /* Fonts */
-  --font-display: 'Lora', sans-serif;
-  --font-body: 'Poppins', sans-serif;
+  --font-display: "Lora", sans-serif;
+  --font-body: "Poppins", sans-serif;
 
   /* Border Decorations */
-  --border-decoration: 2px solid oklch(var(--fg-l) var(--fg-c) var(--fg-h) / .3);
+  --border-decoration: 2px solid
+    oklch(var(--fg-l) var(--fg-c) var(--fg-h) / 0.3);
 }
 
 * {
@@ -53,7 +54,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   font-weight: 700;
 }
