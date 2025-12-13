@@ -3,151 +3,170 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maranix</title>
-    <meta name="description" content="" />
+    <title>Maranix | Building Softwares &amp; Freezing Time</title>
+    <meta
+      name="description"
+      content="See my latest work in code and captured moments"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Lora:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lora:wght@400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
 
     <style>
-      body {
-        height: 100%;
-
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr auto;
-      }
-
-      header {
-        max-width: clamp(15rem, 45vw, 30rem);
-
-        display: flex;
-
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .hero__section {
-        padding: 1rem 0.5rem 1rem 1rem;
-
-        border-radius: 1rem;
-        border-top: 1px solid transparent;
-        border-left: 1px solid transparent;
-        border-right: var(--border-decoration);
-        border-bottom: var(--border-decoration);
-      }
-
-      .hero__title {
-        font-size: 3.5rem;
-        letter-spacing: 0.1rem;
-      }
-
-      .hero__subtitle {
-        color: var(--fg);
-        margin-top: 0.3rem;
-        opacity: 0.6;
-        line-height: 1.4rem;
-      }
-
-      .section__social {
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-      }
-
-      .section__social > a {
-        text-decoration: none;
-        color: var(--fg);
-        transition: color 200ms ease-in-out;
-      }
-
-      .section__social > a:hover {
-        color: var(--accent);
-      }
-
-      /* main */
       main {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: row-reverse;
+        flex-grow: 1;
+        justify-content: space-between;
+
+        margin-top: 2rem;
+      }
+
+      h1 {
+          font-size: 2.5rem;
+      }
+
+      .container__hero--subtitle {
+        font-size: 1.3rem;
+        font-family: var(--font-display);
+      }
+
+      .container__content {
+        display: flex;
+        flex-direction: row-reverse;
         align-items: end;
+        gap: 6rem;
+      }
+
+      .container__projects {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+      }
+
+      .container__socials {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+      }
+
+      .container__photographs {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+      }
+
+      .container_photographs--item {
+        height: clamp(200px, 10vh, 400px);
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 4/5;
+        border-radius: 5px;
+        filter: grayscale(70%);
+
+        transition: filter ease-in-out 150ms;
+      }
+
+      .container_photographs--item:hover {
+          cursor: pointer;
+          filter: none;
       }
 
       footer {
-        padding: 0.5rem 1rem;
-
-        grid-row: 2;
-        grid-column: 1 / -1;
-
-        border-radius: 1rem;
-        border-top: var(--border-decoration);
-        border-bottom: var(--border-decoration);
-
+        margin-top: 2rem;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .container__copyright {
-        opacity: 0.5;
+        justify-content: start;
       }
     </style>
   </head>
 
   <body>
-    <header role="banner">
-      <div class="hero__section">
-        <h1 class="hero__title">RAMAN VERMA</h1>
-        <p class="hero__subtitle">
-          I build software with intention and care—creating experiences that are
-          elegant and meaningful. Alongside my own ventures, I actively
-          contribute to and maintain a few open-source softwares.
-        </p>
+    <header class="container__column">
+      <div class="container__column gap__sm">
+        <h1>Raman Verma</h1>
+        <div class="container__hero--subtitle">
+          <p><span class="color__accent">Software </span>Developer</p>
+          <p>Hobbyist <span class="color__accent">Photographer</span></p>
+        </div>
       </div>
     </header>
 
-    <main></main>
-
-    <footer role="contentinfo">
-      <div class="container__copyright">
-        <span aria-label="Copyright 2025 Raman Verma"
-          >&copy; 2025 Raman Verma</span
+    <main>
+      <div class="container__content">
+        <div
+          class="container__column container__socials gap__sm"
+          aria-label="Social Media Links"
         >
+          <a
+            aria-label="Raman Verma's GitHub Profile, opens in a new tab"
+            href="https://github.com/maranix"
+            target="_blank"
+            rel="noreferrer noopener"
+            >GitHub</a
+          >
+          <a
+            aria-label="Raman Verma's LinkedIn Profile, opens in a new tab"
+            href="https://linkedin.com/in/maranix"
+            target="_blank"
+            rel="noreferrer noopener"
+            >LinkedIn</a
+          >
+          <a
+            aria-label="Raman Verma's X (Twitter) Profile, opens in a new tab"
+            href="https://x.com/its_maranix"
+            target="_blank"
+            rel="noreferrer noopener"
+            >X (Twitter)</a
+          >
+        </div>
+
+        <div class="container__column container__projects gap__sm">
+          <a href="">aarnote</a>
+          <a href="">http_toolkit</a>
+          <a href="">bloc_meta</a>
+          <a href="">essential</a>
+          <a href="">go_serve</a>
+          <a href="">kotak_neo_sdk</a>
+        </div>
       </div>
 
-      <section class="section__social" aria-label="Social Media Links">
-        <a
-          aria-label="Raman Verma's GitHub Profile, opens in a new tab"
-          href="https://github.com/maranix"
-          target="_blank"
-          rel="noreferrer noopener"
-          >GitHub</a
-        >
-        <a
-          aria-label="Raman Verma's LinkedIn Profile, opens in a new tab"
-          href="https://linkedin.com/in/maranix"
-          target="_blank"
-          rel="noreferrer noopener"
-          >LinkedIn</a
-        >
-        <a
-          aria-label="Raman Verma's X (Twitter) Profile, opens in a new tab"
-          href="https://x.com/its_maranix"
-          target="_blank"
-          rel="noreferrer noopener"
-          >X (Twitter)</a
-        >
-        <a
-          aria-label="Send email to Raman Verma"
-          href="mailto:ramanverma4183@gmail.com"
-          rel="noreferrer"
-          >Email</a
-        >
-      </section>
+      <div class="container__photographs">
+        <img
+          class="container_photographs--item"
+          src="https://images.unsplash.com/photo-1764116697826-ccf8965b66e7?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8"
+        />
+        <img
+          class="container_photographs--item"
+          src="https://images.unsplash.com/photo-1763935322642-a58dc993f44d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8"
+        />
+        <img
+          class="container_photographs--item"
+          src="https://images.unsplash.com/photo-1765127586047-f158d5bd6a33?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2Nnx8fGVufDB8fHx8fA%3D%3D"
+        />
+        <img
+          class="container_photographs--item"
+          src="https://images.unsplash.com/photo-1765274456799-b8c40449706b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5OHx8fGVufDB8fHx8fA%3D%3D"
+        />
+        <img
+          class="container_photographs--item"
+          src="https://images.unsplash.com/photo-1763917802050-deb1399e1399?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8"
+        />
+        <img
+          class="container_photographs--item"
+          src="https://images.unsplash.com/photo-1764191064428-eec63f47db96?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D"
+        />
+      </div>
+
+    </main>
+
+
+    <footer>
+      <span class="color__accent" aria-label="Copyright 2025 Raman Verma"
+        >&copy; 2025 Raman Verma</span
+      >
     </footer>
   </body>
 </html>
