@@ -16,88 +16,101 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-
-    <style>
-      main {
-        display: flex;
-        flex-direction: row-reverse;
-        flex-grow: 1;
-        justify-content: space-between;
-
-        margin-top: 2rem;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .container__hero--subtitle {
-        font-size: 1.3rem;
-        font-family: var(--font-display);
-      }
-
-      .container__content {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: end;
-        gap: 6rem;
-      }
-
-      .container__projects {
-        font-family: var(--font-display);
-        text-transform: uppercase;
-      }
-
-      .container__socials {
-        font-family: var(--font-display);
-        text-transform: uppercase;
-      }
-
-      .container__photographs {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.5rem;
-      }
-
-      .container_photographs--item {
-        height: clamp(200px, 10vh, 400px);
-        width: 100%;
-        object-fit: cover;
-        aspect-ratio: 4/5;
-        border-radius: 5px;
-        filter: grayscale(70%);
-
-        transition: filter ease-in-out 150ms;
-      }
-
-      .container_photographs--item:hover {
-        cursor: pointer;
-        filter: none;
-      }
-
-      footer {
-        margin-top: 2rem;
-        display: flex;
-        justify-content: start;
-      }
-    </style>
   </head>
 
   <body>
-    <header class="container__column">
-      <div class="container__column gap__sm">
+    <header class="flex-column hero">
+      <div class="flex-column gap-sm">
         <h1>Raman Verma</h1>
-        <div class="container__hero--subtitle">
-          <p><span class="color__accent">Software </span>Developer</p>
-          <p>Hobbyist <span class="color__accent">Photographer</span></p>
+        <div class="hero__subtitle">
+          <p><span class="text-accent">Software </span>Developer</p>
+          <p>Hobbyist <span class="text-accent">Photographer</span></p>
         </div>
       </div>
     </header>
 
     <main>
-      <div class="container__content">
+      <div class="gallery">
+        <img
+          class="gallery__item"
+          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Passing%20By.jpeg"
+          alt="Photograph titled Passing By"
+        />
+        <img
+          class="gallery__item"
+          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Fall%20Magic.jpeg"
+          alt="Photograph titled Fall Magic"
+        />
+        <img
+          class="gallery__item"
+          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Aquarium%20Baby.jpeg?updatedAt=1765711618458"
+          alt="Photograph titled Aquarium Baby"
+        />
+        <img
+          class="gallery__item"
+          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Green%20Roads.jpeg"
+          alt="Photograph titled Green Roads"
+        />
+        <img
+          class="gallery__item"
+          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Diwali%20Night.jpeg"
+          alt="Photograph titled Diwali Night"
+        />
+        <img
+          class="gallery__item"
+          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Cocktails.jpeg"
+          alt="Photograph titled Cocktails"
+        />
+      </div>
+
+      <div class="content">
+        <div class="flex-column projects-list gap-sm">
+          <a
+            aria-label="Project aarnote, opens in a new tab"
+            href="https://github.com/maranix/aarnote"
+            target="_blank"
+            rel="noreferrer noopener"
+            >aarnote</a
+          >
+          <a
+            aria-label="Project http toolkit, opens in a new tab"
+            href="https://github.com/maranix/http_toolkit"
+            target="_blank"
+            rel="noreferrer noopener"
+            >http_toolkit</a
+          >
+          <a
+            aria-label="Project bloc meta, opens in a new tab"
+            href="https://github.com/maranix/bloc_meta"
+            target="_blank"
+            rel="noreferrer noopener"
+            >bloc_meta</a
+          >
+          <a
+            aria-label="Project essential, opens in a new tab"
+            href="https://github.com/maranix/essential"
+            target="_blank"
+            rel="noreferrer noopener"
+            >essential</a
+          >
+          <a
+            aria-label="Project go serve, opens in a new tab"
+            href="https://github.com/maranix/go_serve"
+            target="_blank"
+            rel="noreferrer noopener"
+            >go_serve</a
+          >
+          <a
+            aria-label="Project kotak neo sdk, opens in a new tab"
+            href="https://github.com/maranix/kotak_neo_sdk"
+            target="_blank"
+            rel="noreferrer noopener"
+            >kotak_neo_sdk</a
+          >
+        </div>
+
         <div
-          class="container__column container__socials gap__sm"
+          class="flex-column socials-list gap-sm"
           aria-label="Social Media Links"
         >
           <a
@@ -122,47 +135,11 @@
             >X (Twitter)</a
           >
         </div>
-
-        <div class="container__column container__projects gap__sm">
-          <a href="">aarnote</a>
-          <a href="">http_toolkit</a>
-          <a href="">bloc_meta</a>
-          <a href="">essential</a>
-          <a href="">go_serve</a>
-          <a href="">kotak_neo_sdk</a>
-        </div>
-      </div>
-
-      <div class="container__photographs">
-        <img
-          class="container_photographs--item"
-          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Passing%20By.jpeg"
-        />
-        <img
-          class="container_photographs--item"
-          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Fall%20Magic.jpeg"
-        />
-        <img
-          class="container_photographs--item"
-          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Aquarium%20Baby.jpeg?updatedAt=1765711618458"
-        />
-        <img
-          class="container_photographs--item"
-          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Green%20Roads.jpeg"
-        />
-        <img
-          class="container_photographs--item"
-          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Diwali%20Night.jpeg"
-        />
-        <img
-          class="container_photographs--item"
-          src="https://ik.imagekit.io/maranix/tr:w-0.1,fo-auto/Frozen%20Times/Cocktails.jpeg"
-        />
       </div>
     </main>
 
     <footer>
-      <span class="color__accent" aria-label="Copyright 2025 Raman Verma"
+      <span class="text-accent" aria-label="Copyright 2025 Raman Verma"
         >&copy; 2025 Raman Verma</span
       >
     </footer>

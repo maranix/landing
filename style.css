@@ -20,7 +20,7 @@
   --font-body: "Lora", sans-serif;
 }
 
-@media(prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --bg: oklch(var(--fg-l) var(--fg-c) var(--fg-h));
     --fg: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
@@ -28,14 +28,13 @@
   }
 }
 
-@media(prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   :root {
     --bg: oklch(var(--fg-l) var(--fg-c) var(--fg-h));
     --fg: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
     --accent: oklch(var(--bg-l) var(--bg-c) var(--bg-h) / 0.5);
   }
 }
-
 
 * {
   box-sizing: border-box;
@@ -52,7 +51,15 @@ body {
   font-family: var(--font-body);
 
   width: clamp(250px, 95vw, 1200px);
-  margin: 2rem auto;
+  min-height: 100vh;
+  /* Fill full viewport height */
+  margin: 0 auto;
+  /* Remove vertical margin to prevent scrollbars with 100vh */
+  padding: 2rem 0;
+  /* Use padding instead for vertical spacing */
+
+  display: flex;
+  flex-direction: column;
 }
 
 h1,
@@ -74,35 +81,99 @@ a:hover {
   color: var(--fg);
 }
 
-.container__column {
+main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-top: 6rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  line-height: 1.2;
+}
+
+.hero__subtitle {
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.5rem);
+  font-family: var(--font-display);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 6rem;
+}
+
+.projects-list,
+.socials-list {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.gallery__item {
+  height: clamp(200px, 10vh, 400px);
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+  border-radius: 5px;
+  filter: grayscale(70%);
+  transition: filter ease-in-out 150ms;
+}
+
+.gallery__item:hover {
+  cursor: pointer;
+  filter: none;
+}
+
+footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: start;
+}
+
+/* Utility Classes */
+.flex-column {
   display: flex;
   flex-direction: column;
 }
 
-.gap__4rem {
-  gap: 4rem;
-}
-
-.gap__2rem {
-  gap: 2rem;
-}
-
-.gap {
-  gap: 1rem;
-}
-
-.gap__sm {
+.gap-sm {
   gap: 0.5rem;
 }
 
-.margin__top--sm {
-  margin-top: 0.5rem;
-}
-
-.margin__bottom--sm {
-  margin-bottom: 0.5rem;
-}
-
-.color__accent {
+.text-accent {
   color: var(--accent);
 }
+/* Utility Classes */
+
+/* Responsive-ness Changes */
+@media screen and (max-width: 900px) {
+  main {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  .content {
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery .gallery__item:nth-child(n + 4) {
+    display: none;
+  }
+}
+/* Responsive-ness Changes */
