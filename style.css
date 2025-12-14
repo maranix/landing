@@ -20,6 +20,23 @@
   --font-body: "Lora", sans-serif;
 }
 
+@media(prefers-color-scheme: dark) {
+  :root {
+    --bg: oklch(var(--fg-l) var(--fg-c) var(--fg-h));
+    --fg: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
+    --accent: oklch(var(--bg-l) var(--bg-c) var(--bg-h) / 0.5);
+  }
+}
+
+@media(prefers-color-scheme: light) {
+  :root {
+    --bg: oklch(var(--fg-l) var(--fg-c) var(--fg-h));
+    --fg: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
+    --accent: oklch(var(--bg-l) var(--bg-c) var(--bg-h) / 0.5);
+  }
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
