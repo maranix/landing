@@ -6,13 +6,12 @@ interface Props {
     stack: string;
     description: string;
     href: string;
-    isExperimental?: boolean;
 }
 
-const { num, title, type, stack, description, href, isExperimental = false } = Astro.props;
+const { num, title, type, stack, description, href } = Astro.props;
 ---
 
-<div class={`work-row ${isExperimental ? 'experimental' : ''}`} onclick={`window.location.href='${href}'`}>
+<div class={`work-row`} onclick={`window.location.href='${href}'`}>
     <div class="work-row-title-container">
         <span class="work-row-num">{num}</span>
         <h2 class="work-row-title">{title}</h2>
@@ -26,103 +25,119 @@ const { num, title, type, stack, description, href, isExperimental = false } = A
 </div>
 
 <style>
-.work-row {
-    display: grid;
-    grid-template-columns: 4fr 2fr 2fr 3fr 1fr;
-    gap: 1rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border-color);
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.work-row:hover {
-    background-color: var(--surface);
-}
-
-.work-row-title-container {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-}
-
-.work-row-num {
-    font-size: 0.6875rem;
-    color: var(--text-tertiary);
-    font-family: monospace;
-}
-
-.work-row-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: color 0.2s ease;
-    line-height: 1;
-}
-
-.work-row:hover .work-row-title {
-    color: var(--accent-tertiary);
-}
-
-.work-row-type {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    background-color: var(--surface-high);
-    font-size: 0.6875rem;
-    text-transform: uppercase;
-    color: var(--text-primary);
-}
-
-.work-row-stack {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.work-row-desc {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
-}
-
-.work-row-icon {
-    text-align: right;
-    color: var(--accent-tertiary);
-}
-
-.work-row .material-symbols-outlined {
-    transition: transform 0.2s ease;
-}
-
-.work-row:hover .material-symbols-outlined {
-    transform: translate(4px, -4px);
-}
-
-/* Experimental variant */
-.work-row.experimental .work-row-title-container .work-row-num { color: var(--accent-primary); }
-.work-row.experimental:hover .work-row-title { color: var(--accent-primary); }
-.work-row.experimental .work-row-type { background-color: rgba(255, 179, 172, 0.2); color: var(--accent-primary); }
-.work-row.experimental .work-row-stack { color: var(--accent-primary); opacity: 0.8; }
-.work-row.experimental .work-row-desc { font-style: italic; }
-.work-row.experimental .work-row-icon { color: var(--accent-primary); }
-.work-row.experimental:hover .material-symbols-outlined { transform: scale(1.1); }
-
-@media (max-width: 768px) {
     .work-row {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        padding: 1.5rem 0;
+        display: grid;
+        grid-template-columns: 4fr 2fr 2fr 3fr 1fr;
+        gap: 1rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-color);
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .work-row:hover {
+        background-color: var(--surface);
+    }
+
+    .work-row-title-container {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+    }
+
+    .work-row-num {
+        font-size: 0.8125rem;
+        color: var(--text-tertiary);
+        font-family: monospace;
+    }
+
+    .work-row-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: color 0.2s ease;
+        line-height: 1;
+    }
+
+    .work-row:hover .work-row-title {
+        color: var(--accent-tertiary);
     }
 
     .work-row-type {
         display: inline-block;
-        width: fit-content;
-        margin-top: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        background-color: var(--surface-high);
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        color: var(--text-primary);
+    }
+
+    .work-row-stack {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+    }
+
+    .work-row-desc {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        line-height: 1.4;
     }
 
     .work-row-icon {
-        display: none;
+        text-align: right;
+        color: var(--accent-tertiary);
     }
-}
+
+    .work-row .material-symbols-outlined {
+        transition: transform 0.2s ease;
+    }
+
+    .work-row:hover .material-symbols-outlined {
+        transform: translate(4px, -4px);
+    }
+
+    /* Experimental variant */
+    .work-row.experimental .work-row-title-container .work-row-num {
+        color: var(--accent-primary);
+    }
+    .work-row.experimental:hover .work-row-title {
+        color: var(--accent-primary);
+    }
+    .work-row.experimental .work-row-type {
+        background-color: rgba(255, 179, 172, 0.2);
+        color: var(--accent-primary);
+    }
+    .work-row.experimental .work-row-stack {
+        color: var(--accent-primary);
+        opacity: 0.8;
+    }
+    .work-row.experimental .work-row-desc {
+        font-style: italic;
+    }
+    .work-row.experimental .work-row-icon {
+        color: var(--accent-primary);
+    }
+    .work-row.experimental:hover .material-symbols-outlined {
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+        .work-row {
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            padding: 1.5rem 0;
+        }
+
+        .work-row-type {
+            display: inline-block;
+            width: fit-content;
+            margin-top: 0.5rem;
+        }
+
+        .work-row-icon {
+            display: none;
+        }
+    }
 </style>

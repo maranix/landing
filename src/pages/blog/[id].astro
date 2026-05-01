@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import PageHeader from "../../components/PageHeader.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("blog");
@@ -12,17 +13,35 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const formattedDate = entry.data.date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
 <Layout title={`${entry.data.title} | RAMAN VERMA`} currentPath="/blog">
-  <main class="main-content container markdown-content">
+  <main class="main-content container">
     <div class="back-link">
       <a href="/blog">
         <span class="material-symbols-outlined">arrow_back</span>
-        Back to Archive
+        Back to Blog
       </a>
     </div>
-    <Content />
+
+    <PageHeader meta={entry.data.category} subtitle={formattedDate}>
+      <h1>{entry.data.title}</h1>
+    </PageHeader>
+
+    <div class="content-divider"></div>
+
+    <article
+      class="post-body markdown-content"
+      style="max-width: 800px; margin: 0 auto; width: 100%; display: block;"
+    >
+      <Content />
+    </article>
   </main>
 </Layout>
 
@@ -45,15 +64,40 @@ const { Content } = await render(entry);
     color: var(--accent-tertiary);
   }
 
+  .content-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 3rem 0;
+  }
+
+  .post-body {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   .markdown-content :global(h1) {
     margin-bottom: 2rem;
     font-size: clamp(2rem, 4vw, 3rem);
+  }
+  .markdown-content :global(h2) {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
   }
   .markdown-content :global(p) {
     font-size: 1.125rem;
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    max-width: 800px;
+  }
+  .markdown-content :global(ul),
+  .markdown-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+  }
+  .markdown-content :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
   }
 </style>

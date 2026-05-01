@@ -15,13 +15,12 @@ const project = defineCollection({
   loader: glob({ base: "./src/content/project", pattern: "**/*.md", }),
   schema: z.object({
     title: z.string(),
+    date: z.date(),
     version: z.string(),
-    icon: z.string(),
     description: z.string(),
+    type: z.string(),
     tags: z.array(z.string()),
-    type: z.string().optional(),
     stack: z.string().optional(),
-    isExperimental: z.boolean().optional().default(false),
   }),
 });
 
