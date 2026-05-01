@@ -43,10 +43,30 @@ body {
 }
 
 /* Typography */
-.text-accent-primary { color: var(--accent-primary); }
-.text-accent-secondary { color: var(--accent-secondary); }
-.text-accent-tertiary { color: var(--accent-tertiary); }
-.text-secondary { color: var(--text-secondary); }
+.highlight {
+    background-color: var(--accent-tertiary);
+    color: #000;
+    display: inline-block;
+    line-height: 0.85;
+    padding: 0.05em;
+    opacity: 0.75;
+}
+
+.text-accent-primary {
+    color: var(--accent-primary);
+}
+
+.text-accent-secondary {
+    color: var(--accent-secondary);
+}
+
+.text-accent-tertiary {
+    color: var(--accent-tertiary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
 
 h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);

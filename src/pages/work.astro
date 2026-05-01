@@ -11,7 +11,11 @@ const projects = await getCollection("project");
         <header class="page-header">
             <div style="max-width: 600px;">
                 <span class="page-header-meta">Index / Portfolio</span>
-                <h1>MARANIX<br />SYSTEMS</h1>
+                <h1>
+                    <span class="highlight">SELECTED</span><br /><span
+                        class="highlight">PROJECTS</span
+                    >
+                </h1>
             </div>
             <div class="status-indicator">
                 <span class="status-label">Status</span>
@@ -61,7 +65,7 @@ const projects = await getCollection("project");
             </div>
             <div>
                 <span class="stat-label">Stack Integrity</span>
-                <span class="stat-value highlight">99.9%</span>
+                <span class="stat-value stat-value-highlight">99.9%</span>
             </div>
         </div>
     </main>
@@ -154,7 +158,7 @@ const projects = await getCollection("project");
         color: var(--text-primary);
     }
 
-    .stat-value.highlight {
+    .stat-value-highlight {
         color: var(--accent-tertiary);
     }
 
