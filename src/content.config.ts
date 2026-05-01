@@ -21,6 +21,7 @@ const project = defineCollection({
     type: z.string(),
     tags: z.array(z.string()),
     stack: z.string().optional(),
+    icon: z.string().optional(),
   }),
 });
 

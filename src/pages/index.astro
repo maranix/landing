@@ -1,6 +1,28 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import BlogEntry from "../components/BlogEntry.astro";
+import Section from "../components/Section.astro";
+
+const allPosts = await getCollection("blog");
+const featuredPosts = allPosts
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .slice(0, 4);
+
+const allProjects = await getCollection("project");
+const featuredProjectIds = [
+    "aarnote",
+    "analyzer-kit-annotation",
+    "build-runner-hook",
+    "http-toolkit",
+];
+const featuredProjects = allProjects
+    .filter((p) => featuredProjectIds.includes(p.id))
+    .sort(
+        (a, b) =>
+            featuredProjectIds.indexOf(a.id) - featuredProjectIds.indexOf(b.id),
+    );
 ---
 
 <Layout title="RAMAN VERMA | Software Engineer" currentPath="/">
@@ -26,30 +48,39 @@ import ProjectCard from "../components/ProjectCard.astro";
             </div>
         </section>
 
-        <!-- <section id="work">
-            <div class="section-header">
-                <h2 class="section-title">Featured Work</h2>
-                <div class="section-line"></div>
-            </div>
-
+        <Section id="work" title="Featured Work">
             <div class="project-grid">
-                <ProjectCard
-                    version="STABLE"
-                    icon="hub"
-                    title="Void Social"
-                    description="Decentralized mobile networking protocol focusing on zero-knowledge proofs and peer-to-peer data synchronization in low-bandwidth environments."
-                    tags={["REACT NATIVE", "TS", "SQLITE"]}
-                    href="/work"
-                />
+                {
+                    featuredProjects.map((project) => (
+                        <ProjectCard
+                            version={project.data.version}
+                            icon={project.data.icon || "hub"}
+                            title={project.data.title}
+                            description={project.data.description}
+                            tags={project.data.tags.slice(0, 3)}
+                            href={`/work/${project.id}`}
+                        />
+                    ))
+                }
             </div>
-        </section> -->
+        </Section>
 
-        <section>
-            <div class="section-header">
-                <h2 class="section-title">Technical Stack</h2>
-                <div class="section-line"></div>
+        <Section id="blog" title="Featured Posts">
+            <div class="blog-list">
+                {
+                    featuredPosts.map((post) => (
+                        <BlogEntry
+                            date={post.data.date}
+                            title={post.data.title}
+                            category={post.data.category}
+                            href={`/blog/${post.id}`}
+                        />
+                    ))
+                }
             </div>
+        </Section>
 
+        <Section title="Technical Stack">
             <div class="capabilities-grid">
                 <!-- Mobile Section -->
                 <div>
@@ -115,7 +146,7 @@ import ProjectCard from "../components/ProjectCard.astro";
                     </ul>
                 </div>
             </div>
-        </section>
+        </Section>
     </main>
 </Layout>
 
@@ -173,39 +204,14 @@ import ProjectCard from "../components/ProjectCard.astro";
         color: var(--text-primary);
     }
 
-    .section-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 3rem;
-    }
-
-    .section-title {
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        color: var(--text-secondary);
-        text-transform: uppercase;
-    }
-
-    .section-line {
-        height: 1px;
-        flex-grow: 1;
-        margin-left: 1rem;
-        background-color: var(--border-color);
-    }
-
-    .section-meta {
-        font-size: 0.8125rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--text-tertiary);
-    }
-
     .project-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 3rem;
+        margin-bottom: 8rem;
+    }
+
+    .blog-list {
         margin-bottom: 8rem;
     }
 
