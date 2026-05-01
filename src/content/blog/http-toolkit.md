@@ -2,7 +2,7 @@
 title: "Supercharging Dart's HTTP Client"
 date: 2026-05-01
 category: "Development"
-aiGeneratedContent: true
+aiWritten: true
 ---
 
 When building networking layers in Dart or Flutter, `http.Client` is often the go-to choice. However, as applications scale, you quickly run into limitations. You need authentication injection, logging, smart retries, and type-safe JSON parsing. Instead of writing boilerplate wrappers over and over, or pulling in massive third-party dependencies, I created `http_toolkit`.

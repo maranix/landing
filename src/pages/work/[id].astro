@@ -16,6 +16,12 @@ const { Content } = await render(entry);
 
 // Check if a corresponding blog post exists
 const correspondingBlog = await getEntry("blog", entry.id);
+
+const formattedDate = entry.data.date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
 <Layout title={`${entry.data.title} | RAMAN VERMA`} currentPath="/work">
@@ -27,7 +33,7 @@ const correspondingBlog = await getEntry("blog", entry.id);
             </a>
         </div>
 
-        <PageHeader meta={entry.data.type} subtitle={entry.data.description}>
+        <PageHeader meta={entry.data.type} subtitle={formattedDate}>
             <h1>{entry.data.title}</h1>
         </PageHeader>
 
@@ -37,13 +43,18 @@ const correspondingBlog = await getEntry("blog", entry.id);
                     <span class="project-tag">{tag}</span>
                 ))
             }
-            {entry.data.aiGeneratedProject && (
+            {
+                entry.data.stack?.map((s) => (
+                    <span class="project-tag">{s}</span>
+                ))
+            }
+            {entry.data.aiGenerated && (
                 <span class="project-tag ai-tag">
                     <span class="material-symbols-outlined" style="font-size: 14px;">auto_awesome</span>
                     Vibe Coded Project
                 </span>
             )}
-            {entry.data.aiGeneratedContent && (
+            {entry.data.aiWritten && (
                 <span class="project-tag ai-tag">
                     <span class="material-symbols-outlined" style="font-size: 14px;">edit_note</span>
                     AI Written Content

@@ -2,7 +2,7 @@
 title: "Eliminating Dart Boilerplate with Analyzer Kit"
 date: 2026-05-01
 category: "Tooling"
-aiGeneratedContent: true
+aiWritten: true
 ---
 
 Writing boilerplate code in Dart—like `copyWith`, `==` operators, `hashCode`, and serialization methods—is a tedious part of data class creation. While code generation tools like `build_runner` and `freezed` exist, they introduce an asynchronous build step that can sometimes slow down the development workflow and clutter your directory with `.g.dart` files.

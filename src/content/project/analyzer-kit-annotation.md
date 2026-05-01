@@ -1,15 +1,14 @@
 ---
 title: "analyzer_kit_annotation"
 date: 2026-05-01
-version: "v1.0.0"
 description: "Annotations for analyzer_kit to generate boilerplate via IDE quick fixes."
 tags: ["DART", "ANALYZER", "CODEGEN"]
 type: "LIBRARY"
-stack: "Dart"
+stack: ["Dart"]
 icon: "code_blocks"
 github: "https://github.com/maranix/analyzer_kit/tree/main/packages/analyzer_kit_annotation"
 website: "https://pub.dev/packages/analyzer_kit_annotation"
-aiGeneratedContent: true
+aiWritten: true
 ---
 
 A Dart Analyzer plugin that provides intelligent lint rules and instant quick fixes for common boilerplate code generation patterns. 

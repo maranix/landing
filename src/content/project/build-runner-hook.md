@@ -1,15 +1,14 @@
 ---
 title: "build_runner_hook"
 date: 2026-05-01
-version: "v1.1.0"
 description: "An analyzer plugin that automatically runs build_runner watch in the background."
 tags: ["DART", "ANALYZER", "TOOLING"]
 type: "PLUGIN"
-stack: "Dart"
+stack: ["Dart"]
 icon: "build"
 github: "https://github.com/maranix/build_runner_hook"
 website: "https://pub.dev/packages/build_runner_hook"
-aiGeneratedContent: true
+aiWritten: true
 ---
 
 An analyzer plugin that automatically runs `build_runner watch` in the background when your IDE opens a Dart or Flutter project. It is designed to remove the friction of manual code generation.

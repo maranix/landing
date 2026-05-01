@@ -1,11 +1,10 @@
 ---
 title: "Personal Website"
 date: 2026-05-01
-version: "STABLE"
 description: "A tid bit on this very website"
 tags: ["ASTRO", "TYPESCRIPT", "RENDER"]
 type: "WEBSITE"
-stack: "Astro / Typescript"
+stack: ["Astro", "Typescript"]
 ---
 
 The site you're looking at right now. A minimal, hand-crafted portfolio built to represent my work and personality without relying on generic templates or UI frameworks.

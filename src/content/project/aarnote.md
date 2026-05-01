@@ -1,14 +1,13 @@
 ---
 title: "Aarnote"
 date: 2026-05-01
-version: "v1.0.0"
 description: "A modern, premium note-taking application built with React Native and Expo."
 tags: ["REACT NATIVE", "EXPO", "TYPESCRIPT"]
 type: "MOBILE APP"
-stack: "React Native / Expo"
+stack: ["React Native", "Expo"]
 icon: "edit_document"
 github: "https://github.com/maranix/aarnote"
-aiGeneratedContent: true
+aiWritten: true
 ---
 
 Aarnote is a cross-platform note-taking app featuring a sleek, light and dark themed UI with glassmorphism effects, built for both iOS and Android. It prioritizes the user experience above all else, ensuring that taking notes is a frictionless and visually pleasing process.

@@ -1,15 +1,14 @@
 ---
 title: "http_toolkit"
 date: 2026-05-01
-version: "v3.0.0"
 description: "The missing battery for Dart's http package, featuring middleware and type-safe JSON."
 tags: ["DART", "HTTP", "NETWORKING"]
 type: "LIBRARY"
-stack: "Dart"
+stack: ["Dart"]
 icon: "api"
 github: "https://github.com/maranix/http_toolkit"
 website: "https://pub.dev/packages/http_toolkit"
-aiGeneratedContent: true
+aiWritten: true
 ---
 
 `http_toolkit` supercharges your HTTP requests in Dart and Flutter applications. Featuring a powerful composable Middleware Pipeline, robust Retries, and Type-Safe JSON utilities, it is designed as a direct, drop-in replacement for the standard `http.Client`.

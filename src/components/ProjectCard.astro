@@ -1,6 +1,6 @@
 ---
 interface Props {
-    version: string;
+    date: Date;
     icon: string;
     title: string;
     description: string;
@@ -8,7 +8,12 @@ interface Props {
     href: string;
 }
 
-const { version, icon, title, description, tags, href } = Astro.props;
+const { date, icon, title, description, tags, href } = Astro.props;
+
+const formattedDate = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "short",
+});
 ---
 
 <div class="project-card" onclick={`window.location.href='${href}'`}>
@@ -20,7 +25,7 @@ const { version, icon, title, description, tags, href } = Astro.props;
         <span
             class="text-secondary"
             style="font-family: monospace; font-size: 0.8125rem;"
-            >{version}</span
+            >{formattedDate}</span
         >
     </div>
     <h3 class="project-card-title">{title}</h3>

@@ -5,6 +5,9 @@ import WorkRow from "../components/WorkRow.astro";
 import PageHeader from "../components/PageHeader.astro";
 
 const projects = await getCollection("project");
+const sortedProjects = projects.sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 ---
 
 <Layout title="Work | RAMAN VERMA" currentPath="/work">
@@ -21,22 +24,13 @@ const projects = await getCollection("project");
             </h1>
         </PageHeader>
 
-        <div class="work-table-header">
-            <div>Project Name</div>
-            <div>Type</div>
-            <div>Stack</div>
-            <div>Description</div>
-            <div style="text-align: right;">Link</div>
-        </div>
-
         <div class="work-list">
             {
-                projects.map((project, index) => (
+                sortedProjects.map((project) => (
                     <WorkRow
-                        num={String(index + 1).padStart(2, "0")}
                         title={project.data.title}
                         type={project.data.type || "Library"}
-                        stack={project.data.stack || ""}
+                        stack={project.data.stack || []}
                         description={project.data.description}
                         href={`/work/${project.id}`}
                     />

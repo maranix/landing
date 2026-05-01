@@ -8,7 +8,7 @@ const blog = defineCollection({
     title: z.string(),
     date: z.date(),
     category: z.string(),
-    aiGeneratedContent: z.boolean().optional(),
+    aiWritten: z.boolean().optional(),
   }),
 });
 
@@ -17,16 +17,15 @@ const project = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date(),
-    version: z.string(),
     description: z.string(),
     type: z.string(),
     tags: z.array(z.string()),
-    stack: z.string().optional(),
+    stack: z.array(z.string()).optional(),
     icon: z.string().optional(),
     github: z.string().optional(),
     website: z.string().optional(),
-    aiGeneratedContent: z.boolean().optional(),
-    aiGeneratedProject: z.boolean().optional(),
+    aiWritten: z.boolean().optional(),
+    aiGenerated: z.boolean().optional(),
   }),
 });
 

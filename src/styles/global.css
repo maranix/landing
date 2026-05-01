@@ -97,7 +97,7 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--accent-secondary);
+    color: var(--accent-primary);
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -125,7 +125,7 @@ a {
 }
 
 .btn-secondary:hover {
-    color: var(--text-primary);
+    color: var(--accent-secondary);
 }
 
 /* Layout */

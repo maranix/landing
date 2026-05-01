@@ -2,7 +2,7 @@
 title: "Automating Build Runner in Dart IDEs"
 date: 2026-05-01
 category: "Tooling"
-aiGeneratedContent: true
+aiWritten: true
 ---
 
 If you develop in Dart or Flutter and use tools like `json_serializable`, `freezed`, or `riverpod_generator`, you're likely familiar with the ritual of opening a terminal and running `dart run build_runner watch` every time you start your IDE. It's a small friction point, but one that adds up over time, especially when jumping between multiple projects.

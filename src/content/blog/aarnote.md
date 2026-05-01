@@ -2,7 +2,7 @@
 title: "Building Aarnote: A Premium Note-Taking Experience"
 date: 2026-05-01
 category: "Mobile"
-aiGeneratedContent: true
+aiWritten: true
 ---
 
 Note-taking applications are abundant, but finding one that strikes the perfect balance between performance, aesthetics, and privacy is rare. Most modern options force you into subscription models and mandatory cloud synchronization. Aarnote is my take on a modern, premium note-taking application built with React Native and Expo, designed to be entirely local-first.
