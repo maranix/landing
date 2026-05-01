@@ -8,28 +8,26 @@ import ProjectCard from "../components/ProjectCard.astro";
         <section class="hero">
             <h1>RAMAN VERMA</h1>
             <p>
-                Software Engineer specializing in low-level mobile systems and
-                performance-oriented architectures. Contributing to open-source
-                initiatives under the moniker <span
-                    class="text-accent-secondary">Maranix</span
-                >.
+                <span class="text-accent-secondary">Software Engineer</span>
+                building robust applications and open-source solutions. Specializing
+                in cross-platform mobile development, scalable backend services, cloud
+                infrastructure, and AI integrations.
             </p>
             <div class="hero-actions">
                 <a href="/work" class="btn-primary">
                     View Work
                     <span class="material-symbols-outlined">arrow_forward</span>
                 </a>
-                <a href="mailto:contact@ramanverma.com" class="btn-secondary">
-                    Connect
+                <a href="mailto:ramanverma4183@gmail.com" class="btn-secondary">
+                    Get In Touch
                 </a>
             </div>
         </section>
 
         <section id="work">
             <div class="section-header">
-                <h2 class="section-title">Featured Mobile Repos</h2>
+                <h2 class="section-title">Featured Work</h2>
                 <div class="section-line"></div>
-                <span class="section-meta">GitHub / Maranix</span>
             </div>
 
             <div class="project-grid">
@@ -51,39 +49,67 @@ import ProjectCard from "../components/ProjectCard.astro";
             </div>
 
             <div class="capabilities-grid">
+                <!-- Mobile Section -->
                 <div>
                     <h4 class="capability-title">
                         <span class="capability-dot dot-primary"></span>
-                        Native Performance
+                        Mobile & Cross-Platform
                     </h4>
                     <ul class="capability-list">
-                        <li>Swift (UIKit / SwiftUI)</li>
-                        <li>Rust (FFI / JNI)</li>
-                        <li>C++ Core Modules</li>
-                        <li>Metal & WebGPU</li>
+                        <li>Flutter & Advanced Dart</li>
+                        <li>React Native</li>
+                        <li>FFI / Platform Channels</li>
+                        <li>Native iOS / Android Integrations</li>
+                        <li>Reactive State Management</li>
+                        <li>Store Deployments (Play Store & App Store)</li>
                     </ul>
                 </div>
+
+                <!-- Web Section -->
                 <div>
                     <h4 class="capability-title">
                         <span class="capability-dot dot-secondary"></span>
-                        Hybrid & Web
+                        Web Development
                     </h4>
                     <ul class="capability-list">
-                        <li>React Native Arch</li>
-                        <li>TypeScript / Next.js</li>
-                        <li>GraphQL / Apollo</li>
-                        <li>Expo Modules</li>
+                        <li>TypeScript & JavaScript</li>
+                        <li>Modern Web Frameworks</li>
+                        <li>Responsive UI & Web Architecture</li>
+                        <li>Web Performance Optimization</li>
                     </ul>
                 </div>
+
+                <!-- Backend Section -->
                 <div>
                     <h4 class="capability-title">
                         <span class="capability-dot dot-tertiary"></span>
-                        Systems Engineering
+                        Backend & Cloud
                     </h4>
                     <ul class="capability-list">
-                        <li>Memory Management</li>
-                        <li>Concurrency Control</li>
+                        <li>Micro & Monolithic Services</li>
+                        <li>Serverless Architectures</li>
+                        <li>Containerization & Orchestration</li>
                         <li>CI/CD Automation</li>
+                        <li>Database Design & Management</li>
+                        <li>Cloud Infrastructure</li>
+                        <li>AI System Integrations</li>
+                        <li>API Design & Optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Systems Section -->
+                <div>
+                    <h4 class="capability-title">
+                        <span class="capability-dot dot-quaternary"></span>
+                        Systems & Tooling
+                    </h4>
+                    <ul class="capability-list">
+                        <li>Framework Internals & Custom Linters</li>
+                        <li>Open-Source Package Development</li>
+                        <li>Concurrency & Async Logic</li>
+                        <li>Memory & Resource Management</li>
+                        <li>Performance Profiling</li>
+                        <li>Security Best Practices</li>
                     </ul>
                 </div>
             </div>
@@ -163,7 +189,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     .section-line {
         height: 1px;
         flex-grow: 1;
-        margin: 0 2rem;
+        margin-left: 1rem;
         background-color: var(--border-color);
     }
 
@@ -212,6 +238,9 @@ import ProjectCard from "../components/ProjectCard.astro";
         background-color: var(--accent-secondary);
     }
     .dot-tertiary {
+        background-color: var(--accent-tertiary);
+    }
+    .dot-quaternary {
         background-color: var(--text-primary);
     }
 
