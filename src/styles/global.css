@@ -92,6 +92,42 @@ a {
     color: inherit;
 }
 
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.btn-primary .material-symbols-outlined {
+    transition: transform 0.2s ease;
+}
+
+.btn-primary:hover .material-symbols-outlined {
+    transform: translateX(4px);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    color: var(--text-primary);
+}
+
 /* Layout */
 .container {
     max-width: 1440px;
