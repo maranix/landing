@@ -1,23 +1,25 @@
 ---
 interface Props {
-    num: string;
     title: string;
     type: string;
-    stack: string;
+    stack: string[];
     description: string;
     href: string;
 }
 
-const { num, title, type, stack, description, href } = Astro.props;
+const { title, type, stack, description, href } = Astro.props;
 ---
 
 <div class={`work-row`} onclick={`window.location.href='${href}'`}>
-    <div class="work-row-title-container">
-        <span class="work-row-num">{num}</span>
-        <h2 class="work-row-title">{title}</h2>
-    </div>
+    <h2 class="work-row-title">{title}</h2>
     <div><span class="work-row-type">{type}</span></div>
-    <div class="work-row-stack">{stack}</div>
+    <div class="work-row-stack">
+        <div class="stack-tags">
+            {stack.map((item) => (
+                <span class="stack-tag">{item}</span>
+            ))}
+        </div>
+    </div>
     <div class="work-row-desc">{description}</div>
     <div class="work-row-icon">
         <span class="material-symbols-outlined">arrow_outward</span>
@@ -27,9 +29,9 @@ const { num, title, type, stack, description, href } = Astro.props;
 <style>
     .work-row {
         display: grid;
-        grid-template-columns: 4fr 2fr 2fr 3fr 1fr;
-        gap: 1rem;
-        padding: 2rem 0;
+        grid-template-columns: 4fr 1.5fr 2fr 4fr 0.5fr;
+        gap: 2rem;
+        padding: 2.5rem 0;
         border-bottom: 1px solid var(--border-color);
         align-items: center;
         cursor: pointer;
@@ -38,18 +40,6 @@ const { num, title, type, stack, description, href } = Astro.props;
 
     .work-row:hover {
         background-color: var(--surface);
-    }
-
-    .work-row-title-container {
-        display: flex;
-        align-items: baseline;
-        gap: 1rem;
-    }
-
-    .work-row-num {
-        font-size: 0.8125rem;
-        color: var(--text-tertiary);
-        font-family: monospace;
     }
 
     .work-row-title {
@@ -79,6 +69,23 @@ const { num, title, type, stack, description, href } = Astro.props;
         color: var(--text-secondary);
     }
 
+    .stack-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .stack-tag {
+        font-size: 0.625rem;
+        padding: 0.15rem 0.5rem;
+        background-color: var(--surface-low);
+        border: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+    }
+
     .work-row-desc {
         font-size: 1rem;
         color: var(--text-secondary);
@@ -87,7 +94,7 @@ const { num, title, type, stack, description, href } = Astro.props;
 
     .work-row-icon {
         text-align: right;
-        color: var(--accent-tertiary);
+        color: var(--accent-primary);
     }
 
     .work-row .material-symbols-outlined {
@@ -98,35 +105,19 @@ const { num, title, type, stack, description, href } = Astro.props;
         transform: translate(4px, -4px);
     }
 
-    /* Experimental variant */
-    .work-row.experimental .work-row-title-container .work-row-num {
-        color: var(--accent-primary);
-    }
-    .work-row.experimental:hover .work-row-title {
-        color: var(--accent-primary);
-    }
-    .work-row.experimental .work-row-type {
-        background-color: rgba(255, 179, 172, 0.2);
-        color: var(--accent-primary);
-    }
-    .work-row.experimental .work-row-stack {
-        color: var(--accent-primary);
-        opacity: 0.8;
-    }
-    .work-row.experimental .work-row-desc {
-        font-style: italic;
-    }
-    .work-row.experimental .work-row-icon {
-        color: var(--accent-primary);
-    }
-    .work-row.experimental:hover .material-symbols-outlined {
-        transform: scale(1.1);
+    @media (max-width: 1024px) {
+        .work-row {
+            grid-template-columns: 4fr 1.5fr 2fr 0.5fr;
+        }
+        .work-row-desc {
+            display: none;
+        }
     }
 
     @media (max-width: 768px) {
         .work-row {
             grid-template-columns: 1fr;
-            gap: 0.5rem;
+            gap: 1rem;
             padding: 1.5rem 0;
         }
 
@@ -138,6 +129,10 @@ const { num, title, type, stack, description, href } = Astro.props;
 
         .work-row-icon {
             display: none;
+        }
+
+        .stack-tags {
+            margin: 0.5rem 0;
         }
     }
 </style>

@@ -1,6 +1,28 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import BlogEntry from "../components/BlogEntry.astro";
+import Section from "../components/Section.astro";
+
+const allPosts = await getCollection("blog");
+const featuredPosts = allPosts
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .slice(0, 4);
+
+const allProjects = await getCollection("project");
+const featuredProjectIds = [
+    "aarnote",
+    "analyzer-kit-annotation",
+    "build-runner-hook",
+    "http-toolkit",
+];
+const featuredProjects = allProjects
+    .filter((p) => featuredProjectIds.includes(p.id))
+    .sort(
+        (a, b) =>
+            featuredProjectIds.indexOf(a.id) - featuredProjectIds.indexOf(b.id),
+    );
 ---
 
 <Layout title="RAMAN VERMA | Software Engineer" currentPath="/">
@@ -8,7 +30,7 @@ import ProjectCard from "../components/ProjectCard.astro";
         <section class="hero">
             <h1>RAMAN VERMA</h1>
             <p>
-                <span class="text-accent-secondary" style={"font-weight: 500"}
+                <span class="text-accent-secondary font-medium"
                     >Software Engineer</span
                 >
                 building robust applications and open-source solutions. Specializing
@@ -26,30 +48,39 @@ import ProjectCard from "../components/ProjectCard.astro";
             </div>
         </section>
 
-        <!-- <section id="work">
-            <div class="section-header">
-                <h2 class="section-title">Featured Work</h2>
-                <div class="section-line"></div>
-            </div>
-
+        <Section id="work" title="Featured Work">
             <div class="project-grid">
-                <ProjectCard
-                    version="STABLE"
-                    icon="hub"
-                    title="Void Social"
-                    description="Decentralized mobile networking protocol focusing on zero-knowledge proofs and peer-to-peer data synchronization in low-bandwidth environments."
-                    tags={["REACT NATIVE", "TS", "SQLITE"]}
-                    href="/work"
-                />
+                {
+                    featuredProjects.map((project) => (
+                        <ProjectCard
+                            date={project.data.date}
+                            icon={project.data.icon || "hub"}
+                            title={project.data.title}
+                            description={project.data.description}
+                            tags={project.data.tags.slice(0, 3)}
+                            href={`/work/${project.id}`}
+                        />
+                    ))
+                }
             </div>
-        </section> -->
+        </Section>
 
-        <section>
-            <div class="section-header">
-                <h2 class="section-title">Technical Stack</h2>
-                <div class="section-line"></div>
+        <Section id="blog" title="Featured Posts">
+            <div class="blog-list">
+                {
+                    featuredPosts.map((post) => (
+                        <BlogEntry
+                            date={post.data.date}
+                            title={post.data.title}
+                            category={post.data.category}
+                            href={`/blog/${post.id}`}
+                        />
+                    ))
+                }
             </div>
+        </Section>
 
+        <Section title="Technical Stack">
             <div class="capabilities-grid">
                 <!-- Mobile Section -->
                 <div>
@@ -115,7 +146,7 @@ import ProjectCard from "../components/ProjectCard.astro";
                     </ul>
                 </div>
             </div>
-        </section>
+        </Section>
     </main>
 </Layout>
 
@@ -123,11 +154,11 @@ import ProjectCard from "../components/ProjectCard.astro";
     /* Home specific */
     .hero {
         margin-bottom: 8rem;
-        max-width: 800px;
+        max-width: 600px;
     }
 
     .hero p {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         color: var(--text-secondary);
         font-weight: 300;
         line-height: 1.6;
@@ -141,71 +172,16 @@ import ProjectCard from "../components/ProjectCard.astro";
         align-items: center;
     }
 
-    .btn-primary {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--accent-primary);
-        font-size: 1rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-    }
 
-    .btn-primary .material-symbols-outlined {
-        transition: transform 0.2s ease;
-    }
-
-    .btn-primary:hover .material-symbols-outlined {
-        transform: translateX(4px);
-    }
-
-    .btn-secondary {
-        color: var(--text-secondary);
-        font-size: 1rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        transition: color 0.2s ease;
-    }
-
-    .btn-secondary:hover {
-        color: var(--text-primary);
-    }
-
-    .section-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 3rem;
-    }
-
-    .section-title {
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        color: var(--text-secondary);
-        text-transform: uppercase;
-    }
-
-    .section-line {
-        height: 1px;
-        flex-grow: 1;
-        margin-left: 1rem;
-        background-color: var(--border-color);
-    }
-
-    .section-meta {
-        font-size: 0.8125rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--text-tertiary);
-    }
 
     .project-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 3rem;
+        margin-bottom: 8rem;
+    }
+
+    .blog-list {
         margin-bottom: 8rem;
     }
 
