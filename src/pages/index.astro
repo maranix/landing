@@ -1,0 +1,227 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<Layout title="RAMAN VERMA | Software Engineer" currentPath="/">
+    <main class="main-content container">
+        <section class="hero">
+            <h1>RAMAN VERMA</h1>
+            <p>
+                Software Engineer specializing in low-level mobile systems and
+                performance-oriented architectures. Contributing to open-source
+                initiatives under the moniker <span
+                    class="text-accent-secondary">Maranix</span
+                >.
+            </p>
+            <div class="hero-actions">
+                <a href="/work" class="btn-primary">
+                    View Work
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+                <a href="mailto:contact@ramanverma.com" class="btn-secondary">
+                    Connect
+                </a>
+            </div>
+        </section>
+
+        <section id="work">
+            <div class="section-header">
+                <h2 class="section-title">Featured Mobile Repos</h2>
+                <div class="section-line"></div>
+                <span class="section-meta">GitHub / Maranix</span>
+            </div>
+
+            <div class="project-grid">
+                <ProjectCard
+                    version="STABLE"
+                    icon="hub"
+                    title="Void Social"
+                    description="Decentralized mobile networking protocol focusing on zero-knowledge proofs and peer-to-peer data synchronization in low-bandwidth environments."
+                    tags={["REACT NATIVE", "TS", "SQLITE"]}
+                    href="/work"
+                />
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">Technical Stack</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="capabilities-grid">
+                <div>
+                    <h4 class="capability-title">
+                        <span class="capability-dot dot-primary"></span>
+                        Native Performance
+                    </h4>
+                    <ul class="capability-list">
+                        <li>Swift (UIKit / SwiftUI)</li>
+                        <li>Rust (FFI / JNI)</li>
+                        <li>C++ Core Modules</li>
+                        <li>Metal & WebGPU</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="capability-title">
+                        <span class="capability-dot dot-secondary"></span>
+                        Hybrid & Web
+                    </h4>
+                    <ul class="capability-list">
+                        <li>React Native Arch</li>
+                        <li>TypeScript / Next.js</li>
+                        <li>GraphQL / Apollo</li>
+                        <li>Expo Modules</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="capability-title">
+                        <span class="capability-dot dot-tertiary"></span>
+                        Systems Engineering
+                    </h4>
+                    <ul class="capability-list">
+                        <li>Memory Management</li>
+                        <li>Concurrency Control</li>
+                        <li>CI/CD Automation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    /* Home specific */
+    .hero {
+        margin-bottom: 8rem;
+        max-width: 800px;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        font-weight: 300;
+        line-height: 1.6;
+        margin-top: 1.5rem;
+    }
+
+    .hero-actions {
+        margin-top: 3rem;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .btn-primary {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--accent-primary);
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .btn-primary .material-symbols-outlined {
+        transition: transform 0.2s ease;
+    }
+
+    .btn-primary:hover .material-symbols-outlined {
+        transform: translateX(4px);
+    }
+
+    .btn-secondary {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+        color: var(--text-primary);
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+    }
+
+    .section-line {
+        height: 1px;
+        flex-grow: 1;
+        margin: 0 2rem;
+        background-color: var(--border-color);
+    }
+
+    .section-meta {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-tertiary);
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-bottom: 8rem;
+    }
+
+    /* Capabilities (Home) */
+    .capabilities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 4rem;
+        margin-bottom: 6rem;
+    }
+
+    .capability-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .capability-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .dot-primary {
+        background-color: var(--accent-primary);
+    }
+    .dot-secondary {
+        background-color: var(--accent-secondary);
+    }
+    .dot-tertiary {
+        background-color: var(--text-primary);
+    }
+
+    .capability-list {
+        list-style: none;
+    }
+
+    .capability-list li {
+        color: var(--text-secondary);
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+</style>

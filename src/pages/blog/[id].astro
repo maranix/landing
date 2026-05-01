@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("blog");
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} | RAMAN VERMA`} currentPath="/blog">
+  <main class="main-content container markdown-content">
+    <div class="back-link">
+      <a href="/blog">
+        <span class="material-symbols-outlined">arrow_back</span>
+        Back to Archive
+      </a>
+    </div>
+    <Content />
+  </main>
+</Layout>
+
+<style>
+  .back-link {
+    margin-bottom: 4rem;
+  }
+  .back-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+  }
+  .back-link a:hover {
+    color: var(--accent-tertiary);
+  }
+
+  .markdown-content :global(h1) {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+  .markdown-content :global(p) {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+  }
+</style>

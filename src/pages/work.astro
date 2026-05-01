@@ -1,0 +1,180 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import WorkRow from "../components/WorkRow.astro";
+
+const projects = await getCollection("project");
+---
+
+<Layout title="Work | RAMAN VERMA" currentPath="/work">
+    <main class="main-content container">
+        <header class="page-header">
+            <div style="max-width: 600px;">
+                <span class="page-header-meta">Index / Portfolio</span>
+                <h1>MARANIX<br />SYSTEMS</h1>
+            </div>
+            <div class="status-indicator">
+                <span class="status-label">Status</span>
+                <div class="status-value">
+                    <div class="status-dot"></div>
+                    Active Production
+                </div>
+            </div>
+        </header>
+
+        <div class="work-table-header">
+            <div>Project Name</div>
+            <div>Type</div>
+            <div>Stack</div>
+            <div>Description</div>
+            <div style="text-align: right;">Link</div>
+        </div>
+
+        <div class="work-list">
+            {
+                projects.map((project, index) => (
+                    <WorkRow
+                        num={
+                            project.data.isExperimental
+                                ? "ERR_404"
+                                : String(index + 1).padStart(2, "0")
+                        }
+                        title={project.data.title}
+                        type={project.data.type || "Library"}
+                        stack={project.data.stack || ""}
+                        description={project.data.description}
+                        href={`/work/${project.id}`}
+                        isExperimental={project.data.isExperimental}
+                    />
+                ))
+            }
+        </div>
+
+        <div class="work-footer">
+            <div>
+                <span class="stat-label">Total Build Count</span>
+                <span class="stat-value">1,204</span>
+            </div>
+            <div>
+                <span class="stat-label">Global Latency Avg</span>
+                <span class="stat-value">12ms</span>
+            </div>
+            <div>
+                <span class="stat-label">Stack Integrity</span>
+                <span class="stat-value highlight">99.9%</span>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    /* Work Page specific */
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 8rem;
+        gap: 2rem;
+    }
+
+    .page-header-meta {
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent-tertiary);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .status-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .status-label {
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-tertiary);
+        margin-bottom: 0.25rem;
+    }
+
+    .status-value {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--text-primary);
+    }
+
+    .status-dot {
+        width: 6px;
+        height: 6px;
+        background-color: var(--accent-tertiary);
+    }
+
+    .work-table-header {
+        display: grid;
+        grid-template-columns: 4fr 2fr 2fr 3fr 1fr;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--text-tertiary);
+    }
+
+    .work-footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin-top: 8rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .stat-label {
+        display: block;
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-tertiary);
+        margin-bottom: 1rem;
+    }
+
+    .stat-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        color: var(--text-primary);
+    }
+
+    .stat-value.highlight {
+        color: var(--accent-tertiary);
+    }
+
+    @media (max-width: 768px) {
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .status-indicator {
+            align-items: flex-start;
+        }
+
+        .work-table-header {
+            display: none;
+        }
+
+        .work-footer {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+</style>

@@ -1,0 +1,113 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    const entries = await getCollection("project");
+    return entries.map((entry) => ({
+        params: { id: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} | RAMAN VERMA`} currentPath="/work">
+    <main class="main-content container markdown-content">
+        <div class="back-link">
+            <a href="/work">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Back to Work
+            </a>
+        </div>
+        <div class="project-header">
+            <span class="project-type">{entry.data.type || "Library"}</span>
+            <h1>{entry.data.title}</h1>
+            <p class="project-desc">{entry.data.description}</p>
+            <div class="project-tags">
+                {
+                    entry.data.tags.map((tag) => (
+                        <span class="project-tag">{tag}</span>
+                    ))
+                }
+            </div>
+        </div>
+        <Content />
+    </main>
+</Layout>
+
+<style>
+    .back-link {
+        margin-bottom: 4rem;
+    }
+    .back-link a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: color 0.2s ease;
+    }
+    .back-link a:hover {
+        color: var(--accent-tertiary);
+    }
+
+    .project-header {
+        margin-bottom: 4rem;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .project-type {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        background-color: var(--surface-high);
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .project-desc {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 800px;
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .project-tag {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.75rem;
+        background-color: var(--surface-high);
+        color: var(--text-secondary);
+        text-transform: uppercase;
+    }
+
+    .markdown-content :global(h1) {
+        margin-bottom: 2rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+    .markdown-content :global(h2) {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    .markdown-content :global(p) {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+    }
+</style>
