@@ -6,28 +6,32 @@ category: "Thoughts"
 
 ## Preface
 
-Creating a personal website is not as easy as it may seem, If you care about uniqueness and providing a different experience to the visitors, It becomes much more difficult and time consuming because you want to stand out from the crowd and create something which represents yourself.
+Building a personal website sounds simple until you actually start. If you care about crafting a unique experience that truly represents who you are, the process quickly becomes challenging. You want to stand out, but you also want a site that feels authentic.
 
 ## Beyond Templates
 
-Normally you'd just fork some random template from GitHub, change a few things here of there then deploy it and call it a day or use some no-code website builder or just vibe code something and then keep on yelling at the agent to change X, fix Y until you are satisfied with the result or become frustrated enough to either give up or accept what the AI generated. Frankly, I do not mind any of these approaches and people use them all the time. The reason begind this is simple, "It works". You achieve your goal of personal branding and showcasing your work, you save time on development, design and the entire process overall. 
+The easiest route is to fork a generic GitHub template, swap out the colors, deploy it, and call it a day. Or you might use a no-code builder, rapidly generating pages and tweaking the AI's output until it's "good enough." 
+
+There's absolutely nothing wrong with these approaches—they work. They save time on design and development while still achieving the baseline goal of having a personal brand online.
 
 ## The Quest for Identity
 
-But, I wanted something different. I wanted to create something which represents myself and my personality, something which is unique and stands out from the crowd while being easy to navigate and pleasent to the eyes. 
+But I wanted something different. I wanted to build a digital space that felt like an extension of my personality—something visually distinct that stood out from the crowd, while remaining accessible and pleasant to navigate.
 
-I had a lot of ideas, a lot of designs trials over the years but I've never found something right or I never really felt like I was able to do justice to my ideas. Everything felt a bit off, maybe the color combination wasn't right, maybe the typography was off, or maybe it was just the overall design lacked the "oomph" factor. I've tried looking at different designs from websites like Awwwards, Dribbble, Behance to get inspired but nothing really clicked for me. While trying to replicate or copy any designs that i liked, I just felt like it was not me and it didn't represent me or my personality then i usually just drop the entire idea completely and start over again. It was a toxic cycle that I was stuck in for a long time.
+Over the years, I cycled through countless design trials. I’d browse Awwwards, Dribbble, and Behance for inspiration, but nothing ever clicked. Whenever I tried to replicate a design I admired, it felt hollow. It didn't represent *me*. Frustrated, I would scrap the entire project and start over. It was an endless, toxic cycle of perfectionism.
 
 ## A Minimalist Shift
 
-At the start of this year I decided to take a step back and think about what I really wanted from a personal website. I wanted something which was simple, elegant, and easy to navigate. Something which would allow me to showcase my work and my personality without being too flashy or over the top. 
+At the start of this year, I took a step back to re-evaluate what I actually needed. The answer was clarity. I wanted a platform that was simple, elegant, and effortless to navigate. A space that showcased my work without relying on flashy, over-the-top gimmicks.
 
-I didn't want to use a framework like shadcn or tailwind or any other kind of "UI" frameworks or utilities which are currently trending in the market because they all felt very generic to me.
+I also made a strict rule: no UI frameworks. No Tailwind, no Shadcn, no trending utilities. While powerful, they often lead to generic, homogenized designs that all look exactly the same.
 
 ## The Custom Approach
 
-Hence, I decided to go with a custom approach and at the end of 2025, I ended publishing an extremely simple website. Honestly, it had way more empty space than it had content. But i still kept it for a few months. Fast-forward to 1st May 2026, I decided to give it a complete make-over and this is what it looks like now. 
+I committed to a fully custom approach. By the end of 2025, I published an extremely minimal version of this site. Honestly, it featured more empty space than actual content—but it was mine, and I kept it live for months. 
+
+Fast-forward to May 2026, I gave the architecture and design a complete overhaul. The result is the site you are looking at right now.
 
 ## Closing Thoughts
 
-I am quite satisfied with the end result and hopefully would continue to keep improving it over the time.
+I am incredibly proud of how this project turned out, and I plan to continuously refine and improve it over time.
