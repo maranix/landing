@@ -10,16 +10,18 @@ github: "https://github.com/maranix/aarnote"
 aiWritten: true
 ---
 
-Aarnote is a cross-platform note-taking app featuring a sleek, light and dark themed UI with glassmorphism effects, built for both iOS and Android. It prioritizes the user experience above all else, ensuring that taking notes is a frictionless and visually pleasing process.
+Aarnote is a lightning-fast, cross-platform note-taking application designed for focus and speed. Built for iOS and Android, it combines a gorgeous glassmorphism UI with a frictionless user experience—so you can capture your ideas instantly without any distractions.
 
 ## The Motivation
 
-Many note-taking applications today are bloated with cloud integrations, social features, and unnecessary complexities. They often require accounts, subscriptions, and an internet connection just to jot down a quick thought. Aarnote was built to return to the basics, but with a modern twist. The goal was to create an app that feels incredibly fast, respects user privacy by keeping data entirely on the device, and looks gorgeous while doing it.
+Modern note-taking apps have become bloated with forced cloud syncs, mandatory accounts, and expensive subscriptions. You shouldn't need an internet connection just to write down a quick thought. 
+
+Aarnote strips away the noise. It returns to the basics by delivering a local-first, blazing-fast experience that keeps your data private and looks stunning doing it.
 
 ## Features
-- **Local-first Architecture**: Notes are stored securely directly on the device using a high-performance local database. There are no mandatory cloud syncs or account sign-ups required.
-- **High Performance Storage**: Built with `react-native-mmkv`, giving it instantaneous read/write operations that drastically outperform traditional `AsyncStorage`.
-- **Bulletproof Security**: Features robust SHA-256 encryption via `expo-crypto` for locking down sensitive notes, ensuring your private thoughts remain private.
-- **Immersive Animations**: Fluid, 60FPS UI transitions powered by `react-native-reanimated`. Every interaction feels polished, from opening a note to swiping through lists.
-- **Tactile Haptics**: Strategic haptic feedback provides physical confirmation for actions, creating a more engaging and immersive user experience.
-- **Rich Text Editing**: Go beyond plain text. Add formatting, structure, and imagery to your notes to truly capture your ideas.
+- **Local-first Architecture**: Keep your notes secure on your device. No forced cloud syncs, no mandatory accounts.
+- **Instant Performance**: Built with `react-native-mmkv` for instantaneous read/write operations that dramatically outpace traditional storage.
+- **Bulletproof Privacy**: Secure your most sensitive thoughts with robust SHA-256 encryption via `expo-crypto`.
+- **Immersive Interactions**: Experience fluid, 60FPS UI transitions powered by `react-native-reanimated`. Every swipe and tap feels remarkably polished.
+- **Tactile Haptics**: Strategic physical feedback makes navigating the app feel engaging and responsive.
+- **Rich Text Editing**: Capture your ideas perfectly with robust formatting, structure, and image support.

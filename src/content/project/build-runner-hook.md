@@ -11,20 +11,20 @@ website: "https://pub.dev/packages/build_runner_hook"
 aiWritten: true
 ---
 
-An analyzer plugin that automatically runs `build_runner watch` in the background when your IDE opens a Dart or Flutter project. It is designed to remove the friction of manual code generation.
+An analyzer plugin that automatically runs `build_runner watch` in the background whenever you open a Dart or Flutter project—completely eliminating the friction of manual code generation.
 
 ## The Friction of Code Generation
 
-In the modern Dart and Flutter ecosystem, code generation is ubiquitous. Packages like `freezed`, `json_serializable`, and `riverpod_generator` are incredibly powerful, but they all share a common annoyance: you must manually open a terminal and run `dart run build_runner watch` to keep your generated files in sync with your code.
+Code generation is ubiquitous in the modern Dart ecosystem. Packages like `freezed` and `riverpod_generator` are incredibly powerful, but they share a frustrating bottleneck: you have to manually open a terminal and run `dart run build_runner watch` to keep your files synced.
 
-If you forget to run it, your code fails to compile. If you have multiple projects open, you have to manage multiple terminal processes. It's a small but constant tax on your focus.
+Forget to run it? Your code won't compile. Have multiple projects open? You're juggling multiple terminal processes. It's a constant, unnecessary tax on your productivity.
 
 ## Seamless Automation
 
-`build_runner_hook` completely eliminates this tax. By hooking into the Dart Analyzer's lifecycle, the plugin detects when you open a project and automatically spins up the `build_runner` process entirely in the background.
+`build_runner_hook` completely removes this tax. By hooking directly into the Dart Analyzer's lifecycle, the plugin detects when you open a project and silently spins up the `build_runner` process in the background.
 
 ## Key Features
-- **Zero-Friction Code Generation**: Starts automatically the moment the analyzer detects a `part` directive in your project. You never have to think about it.
-- **Invisible Background Execution**: Spawns and intelligently manages the `build_runner` process entirely in the background. No terminal windows required.
-- **Graceful Lifecycle Management**: When you close your IDE or switch projects, the analyzer shuts down, and the plugin ensures the background build process is terminated cleanly, preventing zombie processes.
-- **Structured Logging**: While it runs invisibly, it still writes all stdout and stderr output to a timestamped log file. If a build fails, you have full transparency to debug the issue.
+- **Zero-Friction Code Generation**: Starts automatically the moment the analyzer detects a `part` directive. You never even have to think about it.
+- **Invisible Execution**: Spawns and intelligently manages the `build_runner` process entirely in the background. No more cluttered terminal windows.
+- **Graceful Lifecycle Management**: When you close your IDE or switch projects, the plugin ensures the background build process terminates cleanly, preventing zombie processes.
+- **Structured Logging**: While it runs invisibly, it writes all output to a timestamped log file. If a build fails, you retain full transparency to debug the issue easily.

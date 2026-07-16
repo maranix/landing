@@ -7,17 +7,17 @@ type: "WEBSITE"
 stack: ["Astro", "Typescript"]
 ---
 
-The site you're looking at right now. A minimal, hand-crafted portfolio built to represent my work and personality without relying on generic templates or UI frameworks.
+The site you're browsing right now. A minimal, hand-crafted portfolio designed to showcase my work and personality—built entirely without generic templates or bloated UI frameworks.
 
-## Why Astro
+## Why Astro?
 
-I chose [Astro](https://astro.build) as the foundation for a few practical reasons — it ships zero JavaScript by default, supports content collections out of the box, and lets me write components with scoped styles without pulling in a full frontend framework. The entire site is statically generated at build time, resulting in fast page loads and a simple deployment pipeline.
+I chose [Astro](https://astro.build) for a few highly practical reasons: it ships zero JavaScript by default, natively supports content collections, and allows me to write components with scoped styles without needing a full frontend framework. Because the entire site is statically generated at build time, it delivers blazing-fast page loads and a remarkably simple deployment pipeline.
 
 ## Architecture
 
-The site follows a straightforward SSG (Static Site Generation) architecture. There are no client-side routers, no SPA transitions, and no hydrated framework components. Every page is pre-rendered HTML with scoped CSS.
+This site relies on a straightforward Static Site Generation (SSG) architecture. There are no client-side routers, no single-page app (SPA) transitions, and no hydrated framework components. Every page is pure, pre-rendered HTML with heavily scoped CSS.
 
-Content is managed through Astro's content collections — blog posts and project entries live as Markdown files with typed frontmatter schemas. This keeps the authoring workflow simple: write Markdown, define metadata in YAML, and the build pipeline handles the rest.
+Content is driven by Astro's content collections. Blog posts and projects live as simple Markdown files with strictly typed frontmatter schemas. This creates a frictionless authoring workflow: write the Markdown, define the metadata in YAML, and let the build pipeline handle the rest.
 
 ## Project Structure
 
@@ -36,13 +36,13 @@ src/
 
 ## Stack
 
-- **Astro v6** — Static site generator, content collections, scoped component styles
-- **TypeScript** — Typed frontmatter schemas via Zod
-- **Vanilla CSS** — No Tailwind, no utility frameworks. Custom properties for theming, scoped `<style>` blocks per component, one global stylesheet for shared tokens
-- **Render** — Hosting and deployment
+- **Astro v6** — Static site generator, content collections, and scoped component styles.
+- **TypeScript** — Strictly typed frontmatter schemas via Zod.
+- **Vanilla CSS** — No Tailwind, no utility classes. Uses custom properties for theming, scoped `<style>` blocks per component, and one global stylesheet for core tokens.
+- **Render** — Fast, reliable hosting and automated deployment.
 
 ## Design Philosophy
 
-No UI libraries. No component kits. Every element is hand-written to match a specific visual identity — dark background, monospaced accents, uppercase typography, and a data-driven aesthetic inspired by terminal interfaces and engineering dashboards.
+No UI libraries. No pre-built component kits. Every element is meticulously hand-written to match a highly specific visual identity: dark backgrounds, monospaced accents, uppercase typography, and a data-driven aesthetic inspired by terminal interfaces and engineering dashboards.
 
-The goal was always to build something that felt like *mine* rather than a reskinned template.
+The ultimate goal was to build a space that felt distinctly *mine*, rather than just another reskinned template.
